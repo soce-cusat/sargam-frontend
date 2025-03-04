@@ -7,21 +7,21 @@
 // import Footer from "./components/Footer";
 "use client"
 import { useState } from "react";
-import Footer from "@/components/Footer"
-import FullScreenVideo from "@/components/Landingpage";
-import Header from "@/components/Header"
-import Secondpage from "@/components/Secondpage/Secondpage";
-import Leaderboard from "@/components/Leaderboard/Leaderboard";
-import ImageSection from "@/components/imagesection/Imagesection";
-import Contact from "@/components/Contact/Contact"
-import ResponsiveCards from "@/components/Thirdpage/ResponsiveCards";
-import MasonryGrid from "@/components/imgsecmobile/Masornygrid";
+// import Footer from "@/components/Footer"
+// import FullScreenVideo from "@/components/Landingpage";
+// import Header from "@/components/Header"
+// import Secondpage from "@/components/Secondpage/Secondpage";
+// import Leaderboard from "@/components/Leaderboard/Leaderboard";
+// import ImageSection from "@/components/imagesection/Imagesection";
+// import Contact from "@/components/Contact/Contact"
+// import ResponsiveCards from "@/components/Thirdpage/ResponsiveCards";
+// import MasonryGrid from "@/components/imgsecmobile/Masornygrid";
 function App() {
   const [showSecondVideo, setShowSecondVideo] = useState(false);
 
   return (
     <main className="relative min-h-screen w-screen overflow-x-hidden">
-      <Header />
+      {/* <Header /> */}
       <section className="relative h-screen overflow-x-hidden">
         <div className="w-screen h-screen absolute top-0 left-0 overflow-hidden">
           {!showSecondVideo ? (
@@ -45,16 +45,16 @@ function App() {
           )}
         </div>
       </section>
+{/* 
+        <Secondpage /> */}
 
-        <Secondpage />
+          {/* <Leaderboard/> */}
 
-          <Leaderboard/>
-
-        <ImageSection/>
+        {/* <ImageSection/> */}
         {/* <MasonryGrid/> */}
-        <Contact/>
+        {/* <Contact/> */}
 
-      <Footer/>
+      {/* <Footer/> */}
     </main>
   );
 }

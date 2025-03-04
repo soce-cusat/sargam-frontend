@@ -10,11 +10,7 @@ const SecondPage = () => {
   {/* Cards container */}
   <div className="flex w-full mt-10">
     {/* First card with black background and margin to the right */}
-    <div
-  className="flex-1 aspect-square flex items-center justify-center text-white md:rounded-2xl sm:rounded-lg text-2xl mr-2"
-  style={{ backgroundColor: "#580608" }}
->
-</div>
+
 
 
     {/* Other cards with no margin between them */}
@@ -28,38 +24,43 @@ const SecondPage = () => {
       backgroundColor: "transparent",
       borderColor: "#580608",
       borderStyle: "solid",
-      borderWidth: `
-        ${window.innerWidth >= 768 ? "4px" : "2px"}  /* Top */
-        ${index === numbers.length - 1 ? (window.innerWidth >= 768 ? "4px" : "2px") : "0"} /* Right */
-        ${window.innerWidth >= 768 ? "4px" : "2px"}  /* Bottom */
-        ${index === 0 ? (window.innerWidth >= 768 ? "4px" : "2px") : "0"} /* Left */
-      `,
+      borderWidth: "2px",
     }}
   >
     {num}
   </div>
+  
 ))}
 
+<div 
+  className="flex-1 aspect-square flex items-center justify-center text-white md:rounded-2xl sm:rounded-lg text-2xl mr-2"  
+  style={{ 
+    backgroundColor: "black", 
+    backgroundImage: 'url("/Layer 8.png")', 
+    backgroundSize: 'cover', 
+    backgroundPosition: 'center' 
+  }} 
+> 
+</div>
 
   </div>
-  <div className="flex w-full gap-2 md:flex-row flex-col items-center">
-        {/* Side card for both mobile and desktop */}
-        <div className="flex-2 bg-blue-500 text-white text-xl font-bold flex justify-center items-center rounded-lg w-11/12 aspect-[2/1] md:w-auto md:h-64 sm:h-38">
-          2
+  <div className="flex w-full max-w-full aspect-[5/2] md:aspect-[4/1] max-h-[12vh] md:max-h-[30vh] gap-2">
+        <div style={{ 
+    backgroundColor: "black", 
+    backgroundImage: 'url("/Layer 11.png")', 
+    backgroundSize: 'cover', 
+    backgroundPosition: 'center' 
+  }}  className="flex-2 flex justify-center items-center text-white text-xl font-bold text-center bg-blue-500 rounded-xl p-2">
+          
         </div>
-        
-        {/* Middle card (Hidden on mobile) */}
-        <div className="hidden md:flex flex-1 bg-blue-500 text-white text-xl font-bold justify-center items-center rounded-lg md:h-64 md:w-64 sm:h-48 sm:w-8">
+        <div className="flex-1 flex justify-center items-center text-white text-xl font-bold text-center bg-red-500 rounded-xl p-2 hidden md:flex">
           1
         </div>
-        
-        {/* Side card for both mobile and desktop */}
-        <div className="flex-2 bg-blue-500 text-white text-xl font-bold flex justify-center items-center rounded-lg w-11/12 aspect-[2/1] md:w-auto md:h-64 sm:h-38">
+        <div className="flex-2 flex justify-center items-center text-white text-xl font-bold text-center bg-green-500 rounded-xl p-2">
           2
         </div>
       </div>
 </div>
-
 
   );
 };
