@@ -1,4 +1,10 @@
 @import "tailwindcss";
+@font-face {
+  font-family: "MyFont";
+  src: url("/fonts/MyFont.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
 
 @theme {
   --font-sans: var(--font-geist-sans);
@@ -18,7 +24,20 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  width: 100dvw;
+  overflow-x: hidden;
+  background-color: #dfdff0;
+  font-family: "1", sans-serif;
+}
+
+.grid {
+  position: relative; /* The parent container for absolutely positioned images */
+  width: 100vw; /* Full screen width */
+  height: 100vh; /* Full screen height */
+}
+
+.grid-item {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
