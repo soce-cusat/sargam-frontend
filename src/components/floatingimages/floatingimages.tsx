@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import React from 'react';
 import styles from './img.module.scss';
 import gsap from 'gsap';
+import Image from 'next/image';
 const FloatingImages: React.FC = () => {
     useEffect(() => {
         gsap.to(".image2", {
@@ -34,7 +35,7 @@ const FloatingImages: React.FC = () => {
     <main>
  <div  className="dv" style={{ position: 'relative', width: '100vw', height: '50vh', backgroundColor: 'black' }}>
       {positions.map((position, index) => (
-        <img
+        <Image
           key={index}
           src={`./images/floating_${index + 1}.jpg`}
           alt={`Floating Image ${index + 1}`}
@@ -51,8 +52,8 @@ const FloatingImages: React.FC = () => {
       ))}
     </div>
     <div className={styles.title}>
-  <img src="/theyyam.png" alt="Image 1" className={styles.image1} />
-  <img src="/shadow.png" alt="Image 2" className={styles.image2} />
+  <Image src="/theyyam.png" alt="Image 1" className={styles.image1} />
+  <Image src="/shadow.png" alt="Image 2" className={styles.image2} />
 </div>
     </main>
   );

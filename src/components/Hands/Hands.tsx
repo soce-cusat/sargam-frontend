@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import "./hands.css";
+import "./Hands.css";
+import Image from "next/image";
 
 export default function Hands() {
   const leftImgRef = useRef(null);
@@ -25,14 +26,31 @@ export default function Hands() {
 
   return (
     <div className="section">
-      <img
+      <Image
         ref={leftImgRef}
         src="./left.png"
         alt="Left Image"
         className={`left-img ${hasAnimated ? "rotate-left" : ""}`}
       />
-      <div className="text">SARGAM</div>
-      <img
+   <div 
+    className="text-container" 
+    style={{ 
+        display: "flex", 
+        flexDirection: "column", 
+        justifyContent: "center", 
+        alignItems: "center", 
+        // height: "100vh", 
+        textAlign: "center", 
+        color:"white",
+        fontFamily: "Classical, sans-serif", 
+        fontSize: "clamp(16px, 10vw, 128px)" 
+    }}
+>
+    <div>SARGAM</div>
+    <div>2025</div>
+</div>
+
+      <Image
         ref={rightImgRef}
         src="./right.png"
         alt="Right Image"

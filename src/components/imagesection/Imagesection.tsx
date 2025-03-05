@@ -85,8 +85,8 @@ export default function Img() {
   {/* <Image src={floating7} alt="image" className="w-[25vw] max-w-[225px]" /> */}
       </div>
       <div className={styles.title}>
-  <img src="/theyyam.png" alt="Image 1" className={styles.image1} />
-  <img src="/shadow.png" alt="Image 2" className={styles.image2} />
+  <Image src="/theyyam.png" alt="Image 1" className={styles.image1} />
+  <Image src="/shadow.png" alt="Image 2" className={styles.image2} />
 </div>
 
     </main>

@@ -115,8 +115,15 @@
 }
 
 .left {
+    
     flex: 2;
-    border-radius: 20px 5px 0px 15px;
+    border-radius: 0px 0px 0px px;
+    /* border-radius: 15px 0px 20px 5px; */
+    background-color:black; /* Background color for text container */
+    color: white;
+    border-color: white;
+    border-width: 2px;
+    border-left: none;
 }
 
 .middle {
@@ -132,32 +139,36 @@
     border-radius: 15px 0px 20px 5px;
     background-color:black; /* Background color for text container */
     color: white;
-    border-color: white;
+    border-color: black;
     border-width: 2px;
     font-size: 2.5vw;
     font-weight: bold;
     padding: 10px;
     text-align: center;
 }
-
 @media (max-width: 768px) {
     .bottom-section {
-        flex-direction: column;
+        display: flex;
+        flex-direction: row;
         gap: 5px;
     }
 
     .bottom-box {
-        width: 100%; /* Expand to full width */
+        flex: 1; /* Equal flex distribution */
+        width: auto; /* Allow flexibility */
+        height: 20vh; /* Set manual height (adjust as needed) */
     }
 
-    .left {
-        width: 100%; /* Full width in mobile */
-        flex: none; /* Prevent shrinking */
+    .left, .right {
+        flex: 1; /* Each takes half of the row */
+        width: auto; /* Adjust width automatically */
+        height: 10vh; /* Manually set height */
     }
 
     .left img {
-        width: 100%; /* Ensure the image fills */
-        height: auto; /* Maintain aspect ratio */
+        width: 100%;
+        height: 100%; /* Fill container */
+        object-fit: cover; /* Maintain aspect ratio */
     }
 
     .middle {
@@ -167,9 +178,10 @@
     .right {
         font-size: 4vw;
         padding: 5px;
-        width: 100%; /* Ensure full width */
     }
 }
+
+
 
 @media (max-width: 480px) {
     .right {

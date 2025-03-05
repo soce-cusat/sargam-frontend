@@ -1,6 +1,6 @@
 export const links = [
     {
-        title: "Sign in",
+        title: "Register",
         href: "/signin"
     },
     {

@@ -1,14 +1,13 @@
 "use client"
 import Contact from "@/components/Contact/Contact"
-import FloatingImages from "@/components/floatingimages/floatingimages";
-import Hands from "@/components/Hands/hands";
+// import FloatingImages from "@/components/floatingimages/floatingimages";
+import Hands from "@/components/Hands/Hands";
 import ImageSection from "@/components/imagesection/Imagesection";
 import Second from "@/components/second/second";
 import Header from "@/components/Header/index"
-// import ResponsiveLayout from "@/components/second/second";
-// import ResponsiveLayoutthird from "@/components/third/third";
 import { useState } from "react";
 import ImageBarGraph from "@/components/leaderboard/leaderboard";
+
 function App() {
   const [showSecondVideo, setShowSecondVideo] = useState(false);
 
@@ -36,23 +35,19 @@ function App() {
               loop
             />
           )}
+          {/* Overlay Gradient */}
+          <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-b from-transparent via-black/50 to-black"></div>
         </div>
       </section>
 
-
-
-<Second/>
-<Hands/>
-<ImageSection/>
-{/* <FloatingImages/> */}
-<ImageBarGraph/>
-        <Contact/>
-
+      <Second />
+      <Hands />
+      <ImageSection />
+      {/* <FloatingImages/> */}
+      <ImageBarGraph />
+      <Contact />
     </main>
   );
 }
 
 export default App;
-
-
-// export default App;

@@ -6,6 +6,18 @@
   font-style: normal;
 }
 
+
+@font-face {
+  font-family: "Classical";
+  src: url("/fonts/ClassicalDiary-Regular Demo.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.classical-text {
+  font-family: "Classical", sans-serif;
+}
+
 @theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -27,7 +39,7 @@ body {
   width: 100dvw;
   overflow-x: hidden;
   background-color: #dfdff0;
-  font-family: "1", sans-serif;
+  font-family: "Classical", sans-serif;
 }
 
 .grid {
@@ -40,4 +52,13 @@ body {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.masonry-grid {
+  display: flex;
+  width: 100%;
+}
+.grid-item {
+  width: 200px;
+  margin-bottom: 10px;
 }
