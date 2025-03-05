@@ -1,6 +1,20 @@
 "use client";
 import Header from "@/components/Header"
+import { useState ,useEffect} from "react";
+// import ResponsiveBarGraph from "@/components/leaderboard/leaderboard";
+import Loading from "@/components/Loading";
 export default function Events() {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    // Simulate loading or fetching data
+    setTimeout(() => {
+      setIsLoading(false); // Stop loading after 2 seconds (for example)
+    }, 2000);
+  }, []);
+
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <div className="min-h-screen">
       <Header/>

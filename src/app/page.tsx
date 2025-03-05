@@ -1,16 +1,28 @@
 "use client"
+// import { useState, useEffect } from "react";
 import Contact from "@/components/Contact/Contact"
 // import FloatingImages from "@/components/floatingimages/floatingimages";
 import Hands from "@/components/Hands/Hands";
 import ImageSection from "@/components/imagesection/Imagesection";
 import Second from "@/components/second/second";
 import Header from "@/components/Header/index"
-import { useState } from "react";
-import ImageBarGraph from "@/components/leaderboard/leaderboard";
-
+import { useState ,useEffect} from "react";
+import ResponsiveBarGraph from "@/components/leaderboard/leaderboard";
+import Loading from "@/components/Loading";
 function App() {
   const [showSecondVideo, setShowSecondVideo] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
+  useEffect(() => {
+    // Simulate loading or fetching data
+    setTimeout(() => {
+      setIsLoading(false); // Stop loading after 2 seconds (for example)
+    }, 2000);
+  }, []);
+
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <main className="relative min-h-screen w-screen overflow-x-hidden">
       <Header />
@@ -42,9 +54,12 @@ function App() {
 
       <Second />
       <Hands />
-      <ImageSection />
-      {/* <FloatingImages/> */}
-      <ImageBarGraph />
+      <ImageSection /> 
+{/* <FloatingImages/>  */}
+<div style={{ padding: "20px" }}>
+      <h1>LeaderBoard</h1>
+      <ResponsiveBarGraph />
+    </div>
       <Contact />
     </main>
   );

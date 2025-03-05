@@ -1,67 +1,145 @@
-import React, { useState, useEffect } from "react";
-import { BarChart, Bar, XAxis, ResponsiveContainer, Tooltip, LabelList } from "recharts";
+import { useState, useEffect } from "react";
+import { Bar } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+  ChartOptions,
+  ChartData,
+  Plugin,
+} from "chart.js";
 
-interface DataPoint {
-  name: string;
-  value: number;
-  img: string;
-}
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
-interface CustomBarProps {
-  x?: number;
-  y?: number;
-  width?: number;
-  height?: number;
-  payload?: DataPoint;
-}
-
-const data: DataPoint[] = [
-  { name: "Zone1", value: 400, img: "/pattern1.jpg" },
-  { name: "Zone2", value: 300, img: "/pattern2.jpg" },
-  { name: "Zone3", value: 200, img: "/pattern1.jpg" },
-  { name: "Zone4", value: 278, img: "/pattern2.jpg" },
-  { name: "Zone5", value: 189, img: "/pattern1.jpg" },
-  { name: "Zone6", value: 239, img: "/pattern2.jpg" },
-  { name: "Zone7", value: 349, img: "/pattern1.jpg" },
-  { name: "Zone8", value: 280, img: "/pattern2.jpg" },
-];
-
-const CustomBar: React.FC<CustomBarProps> = ({ x = 0, y = 0, width = 0, height = 0, payload }) => {
-  if (!payload) return null;
-  return (
-    <g>
-      <image href={payload.img} x={x} y={y} width={width} height={height} preserveAspectRatio="xMidYMid slice" />
-    </g>
-  );
-};
-
-const ImageBarChart: React.FC = () => {
-  const [barSize, setBarSize] = useState(60);
+const ResponsiveBarGraph = () => {
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   useEffect(() => {
     const handleResize = () => {
-      const screenWidth = window.innerWidth;
-      setBarSize(screenWidth > 1200 ? 80 : screenWidth > 800 ? 60 : 40);
+      setIsMobile(window.innerWidth <= 768);
     };
 
-    handleResize();
+    handleResize(); // Initial check
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const data: ChartData<"bar"> = {
+    labels: ["1", "2", "3", "4", "5", "6", "7", "8"], // Keys (labels) for the bars
+    datasets: [
+      {
+        label: "Values",
+        data: [12, 19, 3, 5, 2, 3, 15, 7], // Values for the bars
+        backgroundColor: [
+          "#f60000",
+          "#c63733",
+          "#6b1a17",
+          "#980a0f",
+          "#c51b00",
+          "#ae0202",
+          "#EB3B5A",
+          "#00B894",
+        ],
+        borderWidth: 0,
+      },
+    ],
+  };
+
+  const options: ChartOptions<"bar"> = {
+    indexAxis: isMobile ? "y" : "x", // Horizontal for mobile, vertical for desktop
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false, // Hide the legend
+      },
+      tooltip: {
+        enabled: false, // Disable tooltips
+      },
+    },
+    scales: {
+      x: {
+        display: !isMobile, // Show x-axis for desktop
+        grid: {
+          display: false, // Hide grid lines
+        },
+        ticks: {
+          color: "white", // White color for the x-axis labels
+        },
+      },
+      y: {
+        display: true, // Show y-axis for both desktop and mobile
+        grid: {
+          display: false, // Hide grid lines
+        },
+        ticks: {
+          color: "white", // White color for the y-axis labels
+        },
+      },
+    },
+    animation: {
+      duration: 1000, // Animation duration
+    },
+  };
+
+  // Custom plugin to display values above/beside bars
+  const barValueLabelsPlugin: Plugin<"bar"> = {
+    id: "barValueLabels",
+    afterDatasetsDraw: (chart) => {
+      const ctx = chart.ctx;
+      // Manually set the font and color to white
+      ctx.font = "20px Arial"; // Set the font size and style (change as needed)
+      ctx.fillStyle = "white"; // Set the font color to white
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+
+      chart.data.datasets.forEach((dataset, i) => {
+        const meta = chart.getDatasetMeta(i);
+        meta.data.forEach((bar: any, index: number) => {
+          const value = dataset.data[index];
+          const x = bar.x;
+          const y = bar.y;
+
+          if (isMobile) {
+            // For mobile (horizontal bars), place the value at the end of the bar
+            const barWidth = bar.width; // Width of the bar
+            ctx.fillText(value?.toString() || "", x + barWidth / 2, y);
+          } else {
+            // For desktop (vertical bars), place the value above the bar
+            ctx.fillText(value?.toString() || "", x, y - 10);
+          }
+        });
+      });
+    },
+  };
+
   return (
-    <div style={{ width: "100%", maxWidth: "100vw", overflow: "hidden", marginTop: "30px" }}>
-      <ResponsiveContainer width="100%" height={400}>
-        <BarChart data={data} margin={{ top: 30, left: 0, right: 0, bottom: 10 }}>
-          <XAxis dataKey="name" stroke="#ffffff" tick={{ fill: "#ffffff" }} />
-          <Tooltip />
-          <Bar dataKey="value" shape={<CustomBar />} barSize={barSize}>
-            <LabelList dataKey="value" position="top" fill="white" fontSize={14} />
-          </Bar>
-        </BarChart>
-      </ResponsiveContainer>
+    <div
+      style={{
+        width: "100%",
+        height: isMobile ? "400px" : "500px",
+        padding: "20px",
+        borderRadius: "10px",
+      }}
+    >
+      <Bar
+        data={data}
+        options={options}
+        plugins={[barValueLabelsPlugin]}
+      />
     </div>
   );
 };
 
-export default ImageBarChart;
+export default ResponsiveBarGraph;

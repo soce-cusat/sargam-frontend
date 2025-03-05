@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./Hands.css";
 import Image from "next/image";
+// import Image from "next/image";
 
 export default function Hands() {
   const leftImgRef = useRef(null);
@@ -26,12 +27,20 @@ export default function Hands() {
 
   return (
     <div className="section">
+       <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-b from-transparent via-black/50 to-black"></div>
+       {/* <div className="absolute top-0 left-0 w-full h-2/3 bg-gradient-to-b from-transparent via-black to-black/50"></div> */}
+      <video autoPlay muted loop playsInline className="bg-video">
+        <source src="/efects.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <Image
         ref={leftImgRef}
-        src="./left.png"
+        src="/left.png"
         alt="Left Image"
+        width={800} height={600}
         className={`left-img ${hasAnimated ? "rotate-left" : ""}`}
       />
+      {/* <Image src="/theyyam.png" alt="Image 1" width={800} height={600} className={styles.image1} /> */}
    <div 
     className="text-container" 
     style={{ 
@@ -50,12 +59,14 @@ export default function Hands() {
     <div>2025</div>
 </div>
 
-      <Image
+    <Image
         ref={rightImgRef}
-        src="./right.png"
+        src="/right.png"
         alt="Right Image"
+        width={800} height={600}
         className={`right-img ${hasAnimated ? "rotate-right" : ""}`}
-      />
+      /> 
+      
     </div>
   );
 }

@@ -80,13 +80,13 @@ export default function Img() {
       </div>
       
       <div ref={plane3} className={styles.plane}>  
-      <Image src={floating7} alt="image" className="w-[20vw] max-w-[180px]" />
+      {/* <Image src={floating7} alt="image" className="w-[20vw] max-w-[180px]" /> */}
   <Image src={floating8} alt="image" className="w-[22vw] max-w-[158px]" />
-  {/* <Image src={floating7} alt="image" className="w-[25vw] max-w-[225px]" /> */}
+  <Image src={floating7} alt="image" className="w-[25vw] max-w-[225px]" />
       </div>
       <div className={styles.title}>
-  <Image src="/theyyam.png" alt="Image 1" className={styles.image1} />
-  <Image src="/shadow.png" alt="Image 2" className={styles.image2} />
+      <Image src="/theyyam.png" alt="Image 1" width={800} height={600} className={styles.image1} />
+      <Image src="/shadow.png" alt="Image 2" width={800} height={600} className={styles.image2} />
 </div>
 
     </main>

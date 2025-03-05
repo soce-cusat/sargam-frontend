@@ -1,6 +1,7 @@
 "use client";
-
-import { useState } from "react";
+import Header from "@/components/Header";
+import Loading from "@/components/Loading";
+import { useState, useEffect } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Masonry from "react-masonry-css";
@@ -13,33 +14,48 @@ const images = Array.from({ length: 8 }, (_, i) => ({
 export default function GalleryComponent() {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading or fetching data
+    setTimeout(() => {
+      setIsLoading(false); // Stop loading after 2 seconds (for example)
+    }, 2000);
+  }, []);
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
-    <div className="w-full min-h-screen bg-black text-white px-4 py-6 flex flex-col items-center">
+    <div className="w-full min-h-screen bg-black text-white px-8 py-12 flex flex-col items-center">
+      <Header />
       {/* Title */}
-      <h2 className="font-bold mb-6 text-center leading-none" style={{ fontSize: "max(4rem, 5vw)", width: "50vw" }}>
+      <h2
+        className="font-bold mb-12 text-center leading-none"
+        style={{ fontSize: "max(4rem, 5vw)", width: "50vw" }}
+      >
         Gallery
       </h2>
 
       {/* Masonry Grid */}
-      <Masonry
-        breakpointCols={{ default: 3, 1024: 2, 640: 2 }}
-        className="flex gap-2"
-        columnClassName="masonry-column"
-      >
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {images.map((img, i) => (
-          <Image
-            key={i}
-            src={img.src}
-            className="w-full rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer mb-2"
-            alt={`Image ${11 + i}`}
-            onClick={() => {
-              setIndex(i);
-              setOpen(true);
-            }}
-          />
+          <div key={i}>
+            <Image
+              src={img.src}
+              className="w-full rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer mb-4"
+              alt={`Image ${11 + i}`}
+              width={100} // Define a fixed width
+              height={100} // Define a fixed height
+              onClick={() => {
+                setIndex(i);
+                setOpen(true);
+              }}
+            />
+          </div>
         ))}
-      </Masonry>
+      </div>
 
       {/* Lightbox */}
       <Lightbox

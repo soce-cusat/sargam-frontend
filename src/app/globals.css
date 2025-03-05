@@ -1,10 +1,10 @@
 @import "tailwindcss";
-@font-face {
+/* @font-face {
   font-family: "MyFont";
   src: url("/fonts/MyFont.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;
-}
+} */
 
 
 @font-face {
