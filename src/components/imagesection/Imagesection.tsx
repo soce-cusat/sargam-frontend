@@ -69,19 +69,19 @@ export default function Img() {
   return (
     <main onMouseMove={manageMouseMove} className={styles.main} >
       <div ref={plane1} className={styles.plane}>
-      <Image src={floating1} alt="image" className="w-[20vw] max-w-[200px]" />
-  <Image src={floating2} alt="image" className="w-[22vw] max-w-[208px]" />
-  <Image src={floating3} alt="image" className="w-[25vw] max-w-[225px]" />
+      <Image src={floating1} alt="image" className="w-[20vw] max-w-[150px]" />
+  <Image src={floating2} alt="image" className="w-[22vw] max-w-[158px]" />
+  <Image src={floating3} alt="image" className="w-[25vw] max-w-[185px]" />
       </div>
       <div ref={plane2} className={styles.plane}>  
-      <Image src={floating4} alt="image" className="w-[20vw] max-w-[200px]" />
-  <Image src={floating5} alt="image" className="w-[22vw] max-w-[208px]" />
-  <Image src={floating6} alt="image" className="w-[25vw] max-w-[225px]" />
+      <Image src={floating4} alt="image" className="w-[20vw] max-w-[150px]" />
+  <Image src={floating5} alt="image" className="w-[22vw] max-w-[158px]" />
+  <Image src={floating6} alt="image" className="w-[25vw] max-w-[185px]" />
       </div>
       
       <div ref={plane3} className={styles.plane}>  
-      <Image src={floating7} alt="image" className="w-[20vw] max-w-[200px]" />
-  <Image src={floating8} alt="image" className="w-[22vw] max-w-[208px]" />
+      <Image src={floating7} alt="image" className="w-[20vw] max-w-[180px]" />
+  <Image src={floating8} alt="image" className="w-[22vw] max-w-[158px]" />
   {/* <Image src={floating7} alt="image" className="w-[25vw] max-w-[225px]" /> */}
       </div>
       <div className={styles.title}>
