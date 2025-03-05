@@ -5,7 +5,7 @@ import { perspective, slideIn } from "./anim";
 import Link from "next/link";
 
 export default function Index() {
-  const colors = ["#FF5733", "#33FF57", "#3357FF", "#F4D03F", "#A569BD", "#EC7063"]; // Add more colors if needed
+  const colors = ["#ffd593", "#ffd593", "#ffd593", "#ffd593", "#ffd593", "#ffd593"]; // Add more colors if needed
 
   return (
     <div className={styles.nav}>

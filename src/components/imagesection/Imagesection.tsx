@@ -1,4 +1,5 @@
 'use client';
+import { useEffect } from 'react';
 import styles from './img.module.scss';
 import Image from 'next/image';
 import { useRef } from 'react';
@@ -55,27 +56,39 @@ export default function Img() {
       requestAnimationFrameId = null;
     }
   };
+  useEffect(() => {
+    gsap.to(".image2", {
+      y: 100, // Vertical movement (adjust as needed)
+      repeat: -1, // Infinite repeat
+      yoyo: true, // The animation will reverse after reaching its target
+      duration: 1, // Duration of one movement cycle
+      ease: "easeInOut", // Smooth easing for the movement
+    });
+  }, []);
 
   return (
-    <main onMouseMove={manageMouseMove} className={styles.main}>
+    <main onMouseMove={manageMouseMove} className={styles.main} >
       <div ref={plane1} className={styles.plane}>
-          <Image src={floating1} alt='image' width={300} />
-          <Image src={floating2} alt='image' width={300} />
-          <Image src={floating7} alt='image' width={225} />
+      <Image src={floating1} alt="image" className="w-[20vw] max-w-[200px]" />
+  <Image src={floating2} alt="image" className="w-[22vw] max-w-[208px]" />
+  <Image src={floating3} alt="image" className="w-[25vw] max-w-[225px]" />
       </div>
-      <div ref={plane2} className={styles.plane}>
-          <Image src={floating4} alt='image' width={250} />
-          <Image src={floating6} alt='image' width={200} />
-          <Image src={floating8} alt='image' width={225} />
+      <div ref={plane2} className={styles.plane}>  
+      <Image src={floating4} alt="image" className="w-[20vw] max-w-[200px]" />
+  <Image src={floating5} alt="image" className="w-[22vw] max-w-[208px]" />
+  <Image src={floating6} alt="image" className="w-[25vw] max-w-[225px]" />
       </div>
-      <div ref={plane3} className={styles.plane}>
-          <Image src={floating3} alt='image' width={150} />
-          <Image src={floating5} alt='image' width={200} />
+      
+      <div ref={plane3} className={styles.plane}>  
+      <Image src={floating7} alt="image" className="w-[20vw] max-w-[200px]" />
+  <Image src={floating8} alt="image" className="w-[22vw] max-w-[208px]" />
+  {/* <Image src={floating7} alt="image" className="w-[25vw] max-w-[225px]" /> */}
       </div>
-      {/* <div className={styles.title}>
-        <h1>Floating Images Gallery</h1>
-        <p>Next.js and GSAP</p>
-      </div> */}
+      <div className={styles.title}>
+  <img src="/theyyam.png" alt="Image 1" className={styles.image1} />
+  <img src="/shadow.png" alt="Image 2" className={styles.image2} />
+</div>
+
     </main>
   );
 }

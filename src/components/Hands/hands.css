@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 40vh;
+    background-color: black;
+    padding: 20px;
+    position: relative;
+    margin-bottom: 10vh;
+}
+
+.section img {
+    max-height: 50vh; /* Image height adapts to screen */
+    width: auto;
+    max-width: 20vw; /* Keeps image within a reasonable width */
+}
+
+.left-img {
+    position: absolute;
+    left: 0;
+}
+
+.right-img {
+    position: absolute;
+    right: 0;
+}
+
+.text {
+    flex: 1;
+    text-align: center;
+    font-size: clamp(1.5rem, 3vw, 4rem); /* Responsive font size */
+    color: white;
+    font-weight: bold;
+    max-width: 60%;
+    margin: auto;
+}
+
+@media (max-width: 768px) {
+    .section {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+        position: relative;
+    }
+
+    .section img {
+        width: 40%;
+        max-width: 150px;
+        height: auto;
+    }
+
+    .text {
+        font-size: 6vw; /* Larger text on small screens */
+        padding: 10px;
+        max-width: 80%;
+    }
+
+    .left-img {
+        position: relative;
+        align-self: flex-start; /* Stick to left */
+    }
+
+    .right-img {
+        position: relative;
+        align-self: flex-end; /* Stick to right */
+    }
+}
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .left-img, .right-img {
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .rotate-left {
+    transform: rotate(25deg);
+  }
+  
+  .rotate-right {
+    transform: rotate(-25deg);
+  }
+  
