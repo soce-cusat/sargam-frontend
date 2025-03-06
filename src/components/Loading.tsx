@@ -1,9 +1,10 @@
+import Image from 'next/image';
 import React from 'react';
 
 const Loading = () => {
   return (
     <div style={styles.container}>
-      <img src="/loading.gif" alt="Loading..." style={styles.gif} />
+      <Image src="/loading.gif" alt="Loading..." style={styles.gif} width={200} height={200}/>
     </div>
   );
 };

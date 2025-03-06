@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "chart.js": "^4.4.8",
     "framer-motion": "^12.4.9",
     "gsap": "^3.12.7",
+    "lenis": "^1.2.1",
     "masonry-layout": "^4.2.2",
     "next": "15.2.0",
     "react": "^19.0.0",

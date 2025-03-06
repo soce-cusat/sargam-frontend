@@ -4,7 +4,7 @@ import Loading from "@/components/Loading";
 import { useState, useEffect } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-import Masonry from "react-masonry-css";
+// import Masonry from "react-masonry-css";
 import Image from "next/image";
 
 const images = Array.from({ length: 8 }, (_, i) => ({
