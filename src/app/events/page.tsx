@@ -1,5 +1,5 @@
 "use client";
-import Header from "@/components/Header"
+import Header from "@/components/header"
 import { useState ,useEffect} from "react";
 // import ResponsiveBarGraph from "@/components/leaderboard/leaderboard";
 import Loading from "@/components/Loading";

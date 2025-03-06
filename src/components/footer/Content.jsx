@@ -23,7 +23,7 @@ const Section1 = () => {
 const Section2 = () => {
     return (
         <div className='flex justify-between items-end'>
-            <h1 className='text-[14vw] leading-[0.8] mt-10 text-white'>Sargam<br/>2025</h1>
+            <h1 className='text-[10vw] leading-[0.8] mt-10 text-white'>Sargam<br/>2025</h1>
             <p className="text-white">@CUSAT</p>
         </div>
     );
@@ -33,19 +33,20 @@ const Nav = () => {
     return (
         <div className='flex shrink-0 gap-20'>
             <div className='flex flex-col gap-2'>
-                <h3 className='mb-2 uppercase text-white'>About</h3>
+                {/* <h3 className='mb-2 uppercase text-white'>About</h3> */}
                 <p className="text-white">kevin -1231231231</p>
                 <p className="text-white">kevin -1231231231</p>
                 <p className="text-white">kevin -1231231231</p>
                 <p className="text-white">kevin -1231231231</p>
             </div>
             <div className='flex flex-col gap-2'>
-                <h3 className='mb-2 uppercase text-white'>Education</h3>
+                {/* <h3 className='mb-2 uppercase text-white'>Education</h3> */}
                 <p className="text-white">kevin -1231231231</p>
                 <p className="text-white">kevin -1231231231</p>
                 <p className="text-white">kevin -1231231231</p>
                 <p className="text-white">kevin -1231231231</p>
             </div>
+            {/* <p className="text-white">mail:Cusat@gmail.com</p> */}
         </div>
     );
 }

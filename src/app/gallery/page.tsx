@@ -1,5 +1,5 @@
 "use client";
-import Header from "@/components/Header";
+import Header from "@/components/header";
 import Loading from "@/components/Loading";
 import { useState, useEffect } from "react";
 import Lightbox from "yet-another-react-lightbox";

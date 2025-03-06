@@ -1,5 +1,5 @@
 "use client";
-import Header from "@/components/Header"
+import Header from "@/components/header"
 export default function Events() {
   return (
     <div className="min-h-screen">

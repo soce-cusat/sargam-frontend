@@ -8,8 +8,9 @@ import Lenis from "lenis"
 import Hands from "@/components/Hands/Hands";
 import ImageSection from "@/components/imagesection/Imagesection";
 import Second from "@/components/second/second";
-import Header from "@/components/Header/index"
+// import Header from "@/components/Header/index"
 import { useState ,useEffect} from "react";
+import Header from "@/components/header"
 import ResponsiveBarGraph from "@/components/leaderboard/leaderboard";
 import Loading from "@/components/Loading";
 import Intro from "@/components/footer/Intro"
