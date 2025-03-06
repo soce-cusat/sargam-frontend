@@ -60,6 +60,7 @@ export default function Hands() {
 </div>
 
     <Image
+    
         ref={rightImgRef}
         src="/right.png"
         alt="Right Image"

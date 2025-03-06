@@ -30,6 +30,32 @@
   
 
 @media (max-width: 768px) {
+    .large {
+        border-radius: 0px 80px 0px 80px;
+        font-size: 7vw;
+        height: 10vh;
+        font-weight: bold;
+        color: white;
+        white-space: nowrap;
+        overflow: hidden;
+        padding: 10px;
+        border-color: white;
+        border-width: 2px;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .small {
+        background-color: black;
+        border-radius: 10px 0px 0px 20px;
+        display: flex;
+        height: 10vh;
+        width: 31vw;
+        align-items: center;
+        justify-content: center;
+    }
     .main-container {
         position: relative;
         width: 100%;
@@ -39,7 +65,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 10px;
+        gap: 0px;
         /* padding: 10px; */
         overflow: hidden;
       }
