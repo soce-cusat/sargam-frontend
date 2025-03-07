@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, LabelList } from "recharts";
+import { BarChart, Bar, XAxis, YAxis,  ResponsiveContainer, Cell, LabelList } from "recharts";
 
 const data = [
   { name: "1", value: 0 },
