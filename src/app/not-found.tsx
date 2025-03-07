@@ -1,6 +1,6 @@
 "use client"
 import Loading from "@/components/Loading";
-import Header from "@/components/header"
+// import Header from "@/components/header"
 import { useState ,useEffect} from "react";
 export default function NotFound() {
     const [isLoading, setIsLoading] = useState(true);
