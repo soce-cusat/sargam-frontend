@@ -4,14 +4,14 @@ import { useEffect, useState } from "react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, LabelList } from "recharts";
 
 const data = [
-  { name: "A", value: 400 },
-  { name: "B", value: 700 },
-  { name: "C", value: 200 },
-  { name: "D", value: 900 },
-  { name: "E", value: 500 },
-  { name: "F", value: 600 },
-  { name: "G", value: 300 },
-  { name: "H", value: 800 },
+  { name: "1", value: 0 },
+  { name: "2", value: 0 },
+  { name: "3", value: 0 },
+  { name: "4", value: 0 },
+  { name: "5", value: 0 },
+  { name: "6", value: 0 },
+  { name: "7", value: 0 },
+  { name: "8", value: 0 },
 ];
 
 const colors = ["#8884d8", "#82ca9d", "#ffc658", "#ff7f50", "#00c49f", "#ffb6c1", "#4682b4", "#ff6347"];

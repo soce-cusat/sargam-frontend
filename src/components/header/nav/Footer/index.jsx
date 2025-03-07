@@ -32,7 +32,7 @@ export default function Footer() {
                     <span>Sargam 2025</span> 
                 </motion.li>
             </ul>
-            <ul>
+            {/* <ul>
                 <motion.li
                     custom={[0.3, 0]} 
                     variants={translate} initial="initial" 
@@ -47,7 +47,7 @@ export default function Footer() {
                     exit="exit">
                     Terms & Conditions
                 </motion.li>
-            </ul>
+            </ul> */}
         </div>
     )
 }

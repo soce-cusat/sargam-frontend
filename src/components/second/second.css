@@ -173,7 +173,7 @@
 
 .middle {
     flex: 1;
-    border-color: white;
+    /* border-color: white; */
     border-width: 2px;
     border-radius: 75px 10px 5px 10px;
     background-color: black; /* Background color for second container */

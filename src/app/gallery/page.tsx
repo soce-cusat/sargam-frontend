@@ -1,21 +1,13 @@
-"use client";
-import Header from "@/components/header";
+'use client';
 import Loading from "@/components/Loading";
-import { useState, useEffect } from "react";
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
-// import Masonry from "react-masonry-css";
-import Image from "next/image";
+import Image from 'next/image';
+import Header from '@/components/header';
+import { useState ,useEffect} from "react";
+const images = Array.from({ length: 35 }, (_, i) => `/gallery/gallery${1 + i}.jpg`);
 
-const images = Array.from({ length: 8 }, (_, i) => ({
-  src: `/images/${11 + i}.jpeg`,
-}));
-
-export default function GalleryComponent() {
-  const [open, setOpen] = useState(false);
-  const [index, setIndex] = useState(0);
+export default function MasonryGallery() {
+  // const [showSecondVideo, setShowSecondVideo] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
     // Simulate loading or fetching data
     setTimeout(() => {
@@ -26,44 +18,26 @@ export default function GalleryComponent() {
   if (isLoading) {
     return <Loading />;
   }
-
   return (
-    <div className="w-full min-h-screen bg-black text-white px-8 py-12 flex flex-col items-center">
+    <>
       <Header />
-      {/* Title */}
-      <h2
-        className="font-bold mb-12 text-center leading-none"
-        style={{ fontSize: "max(4rem, 5vw)", width: "50vw" }}
-      >
-        Gallery
-      </h2>
+      <section className="p-4 mt-[10vh] overflow-x-hidden">
+      {/* <h1 className="text-center text-6xl font-bold mb-12 text-white">Gallery</h1> */}
 
-      {/* Masonry Grid */}
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-        {images.map((img, i) => (
-          <div key={i}>
-            <Image
-              src={img.src}
-              className="w-full rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer mb-4"
-              alt={`Image ${11 + i}`}
-              width={100} // Define a fixed width
-              height={100} // Define a fixed height
-              onClick={() => {
-                setIndex(i);
-                setOpen(true);
-              }}
-            />
-          </div>
-        ))}
-      </div>
-
-      {/* Lightbox */}
-      <Lightbox
-        open={open}
-        close={() => setOpen(false)}
-        slides={images.map((img) => ({ src: img.src }))}
-        index={index}
-      />
-    </div>
+        <div className="masonry-layout">
+          {images.map((src, index) => (
+            <div key={index} className="masonry-item">
+              <Image
+                src={src}
+                alt={`Image ${index + 11}`}
+                width={300}
+                height={400}
+                className="w-full h-auto rounded-lg"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }

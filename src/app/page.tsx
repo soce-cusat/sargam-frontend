@@ -1,38 +1,23 @@
 "use client"
-import Lenis from "lenis"
+// import Lenis from "lenis"
 // import { useState, useEffect } from "react";
-// import Contact from "@/components/Contact/Contact"
-// import Footer from "@/components/Footer"
+import Contact from "@/components/Contact/Contact"
+import Footer from "@/components/Footer"
 // import Footer from "@/components/footer/Footer1"
 // import FloatingImages from "@/components/floatingimages/floatingimages";
 import Hands from "@/components/Hands/Hands";
 import ImageSection from "@/components/imagesection/Imagesection";
 import Second from "@/components/second/second";
+// import Footer from "@/components/footer/footer"
 // import Header from "@/components/Header/index"
 import { useState ,useEffect} from "react";
 import Header from "@/components/header"
 import ResponsiveBarGraph from "@/components/leaderboard/leaderboard";
 import Loading from "@/components/Loading";
-import Intro from "@/components/footer/Intro"
+// import Intro from "@/components/footer/Intro"
 function App() {
   const [showSecondVideo, setShowSecondVideo] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  useEffect( () => {
-
-    const lenis = new Lenis()
-
-
-
-    function raf(time: number) {
-
-      lenis.raf(time)
-
-      requestAnimationFrame(raf)
-
-    }
- requestAnimationFrame(raf)
-
-  }, [])
   useEffect(() => {
     // Simulate loading or fetching data
     setTimeout(() => {
@@ -76,13 +61,13 @@ function App() {
       <Hands />
       <ImageSection /> 
 {/* <FloatingImages/>  */}
-<div style={{ padding: "20px" }}>
-      <h1>LeaderBoard</h1>
+{/* 
+      <h1>LeaderBoard</h1> */}
       <ResponsiveBarGraph />
-    </div>
-      {/* <Contact /> */}
-      <Intro/>
-      {/* <Footer/> */}
+    {/* </div> */}
+    <div style={{ padding: "20px" }}>  <Contact /></div>
+      {/* <Intro/>*/}
+      <Footer/> 
     </main>
   );
 }

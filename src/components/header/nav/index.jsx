@@ -11,7 +11,7 @@ const links = [
   {
     title: "Home",
     href: "/",
-    src: "home.jpg"
+    src: "home.png"
   },
   {
     title: "Register",
@@ -21,7 +21,7 @@ const links = [
   {
     title: "Events",
     href: "/events",
-    src: "events.jpg"
+    src: "events.png"
   },
   {
     title: "Leaderboard",
