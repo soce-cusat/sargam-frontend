@@ -29,7 +29,7 @@ export default function NotFound() {
         <div className="relative mx-4 flex items-center">
           <div className="rounded-full overflow-hidden animate-spin-slow flex items-center justify-center w-[20vw] h-[20vw] sm:w-[150px] sm:h-[150px] md:w-[200px] md:h-[200px] lg:w-[300px] lg:h-[300px] xl:w-[350px] xl:h-[350px]">
             <Image
-              src="/your-image.jpg"
+              src="/mandala.png"
               alt="Background"
               layout="fill"
               objectFit="cover"
