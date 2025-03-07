@@ -3,7 +3,7 @@ import Loading from "@/components/Loading";
 import Image from 'next/image';
 import Header from '@/components/header';
 import { useState ,useEffect} from "react";
-const images = Array.from({ length: 35 }, (_, i) => `/gallery/gallery${1 + i}.jpg`);
+const images = Array.from({ length: 26 }, (_, i) => `/gallery/gallery${1 + i}.jpg`);
 
 export default function MasonryGallery() {
   // const [showSecondVideo, setShowSecondVideo] = useState(false);

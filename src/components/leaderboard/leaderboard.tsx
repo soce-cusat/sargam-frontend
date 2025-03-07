@@ -44,7 +44,7 @@ export default function BarGraph() {
             dataKey={isMobile ? "name" : undefined}
             tick={{ fontSize: 14 }}
           />
-          <Tooltip />
+          {/* <Tooltip /> */}
           <Bar dataKey="value" radius={[5, 5, 0, 0]}>
             {data.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={colors[index]} />
