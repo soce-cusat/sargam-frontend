@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    overflow: hidden;
+  }
+  
+  .image {
+    animation: fadeSlide 4s infinite ease-in-out;
+  }
+  
+  @keyframes fadeSlide {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    50% {
+      opacity: 0;
+      transform: translateX(100px); /* Moves right while fading out */
+    }
+    51% {
+      opacity: 0;
+      transform: translateX(-100px); /* Resets position for fade-in */
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
