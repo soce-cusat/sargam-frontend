@@ -4,7 +4,7 @@ import React from 'react';
 const Loading = () => {
   return (
     <div style={styles.container}>
-      <Image src="/loading.gif" alt="Loading..." style={styles.gif} width={200} height={200}/>
+      <Image src="/logoload.gif" alt="Loading..." style={styles.gif} width={400} height={200}/>
     </div>
   );
 };
@@ -15,11 +15,11 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh',
-    backgroundColor: 'white',  // White background
+    backgroundColor: 'black',  // White background
     overflow: 'hidden',  // Hide any overflowing content
   },
   gif: {
-    width: '200px',  // Set a small size for the GIF (adjust as needed)
+    width: '400px',  // Set a small size for the GIF (adjust as needed)
     height: '200px',
   },
 };
