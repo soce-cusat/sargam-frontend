@@ -15,7 +15,7 @@ const links = [
   },
   {
     title: "Register",
-    href: "/signin",
+    href: "/app/register/",
     src: "signin.jpg"
   },
   {
