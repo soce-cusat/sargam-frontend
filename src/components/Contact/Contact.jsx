@@ -48,7 +48,7 @@ const Contact = () => {
             {/* Map Box */}
             <div className="min-h-[150px] h-auto w-full md:w-1/3 rounded-lg overflow-hidden border-2 border-white p-5">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.0967224437763!2d76.35932297478458!3d10.008869072882543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080c9d36d17ab3%3A0x3cf6af7fe0b99871!2sAthulya%20Infopark!5e0!3m2!1sen!2sin!4v1726324333796!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.667606430276!2d76.32529347503174!3d10.044263390063426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080c377917e985%3A0xb0fd4b1e85a6e51f!2sCochin%20University%20of%20Science%20and%20Technology!5e0!3m2!1sen!2sin!4v1741455267422!5m2!1sen!2sin"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="rounded-lg border-2 border-black w-full h-full"
@@ -62,3 +62,4 @@ const Contact = () => {
 };
 
 export default Contact;
+

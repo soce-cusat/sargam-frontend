@@ -19,8 +19,8 @@ const links = [
     src: "signin.jpg"
   },
   {
-    title: "Events",
-    href: "/events",
+    title: "Schedule",
+    href: "/schedule",
     src: "events.png"
   },
   {
