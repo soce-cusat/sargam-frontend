@@ -23,14 +23,14 @@ const Contact = () => {
 
               <div className="flex flex-col items-start mt-4">
               
-              <p className="text-xs md:text-sm lg:text-base font-bold text-tedRed">Zone 1 --IHSAN MUHAMMED A.S</p>
-              <p className="text-xs md:text-sm lg:text-base font-bold text-tedRed">Zone 2 --ABEL SAJ </p>
-              <p className="text-xs md:text-sm lg:text-base font-bold text-tedRed">Zone 3 --NAND KISHOR </p>
-              <p className="text-xs md:text-sm lg:text-base font-bold text-tedRed">Zone 4 --AMAL GOPAL </p>
-              <p className="text-xs md:text-sm lg:text-base font-bold text-tedRed">Zone 5 --MUHAMMED UNAIS </p>
-              <p className="text-xs md:text-sm lg:text-base font-bold text-tedRed">Zone 6 --ANTONY FRANCIS</p>
-              <p className="text-xs md:text-sm lg:text-base font-bold text-tedRed">Zone 7 --BEEVILEFILA </p>
-              <p className="text-xs md:text-sm lg:text-base font-bold text-tedRed">Zone 8 --FAHEEM ABDUSSALAM </p>
+              <p className="text-xs md:text-sm lg:text-base font-bold text-tedRed">Zone 1 --IHSAN MUHAMMED A.S-- +91 94972 57634</p>
+              <p className="text-xs md:text-sm lg:text-base font-bold text-tedRed">Zone 2 --ABEL SAJ-- +91 87148 11144</p>
+              <p className="text-xs md:text-sm lg:text-base font-bold text-tedRed">Zone 3 --NAND KISHOR-- +91 82812 39714 </p>
+              <p className="text-xs md:text-sm lg:text-base font-bold text-tedRed">Zone 4 --AMAL GOPAL-- +91 90613 24150</p>
+              <p className="text-xs md:text-sm lg:text-base font-bold text-tedRed">Zone 5 --MUHAMMED UNAIS-- +91 80784 94673 </p>
+              <p className="text-xs md:text-sm lg:text-base font-bold text-tedRed">Zone 6 --ANTONY FRANCIS-- +91 96450 20181</p>
+              <p className="text-xs md:text-sm lg:text-base font-bold text-tedRed">Zone 7 --BEEVILEFILA-- +91 99959 34997</p>
+              <p className="text-xs md:text-sm lg:text-base font-bold text-tedRed">Zone 8 --FAHEEM ABDUSSALAM-- +91 85907 06656 </p>
               {/* <p className="text-xs md:text-sm lg:text-base font-bold text-tedRed">Kevin -Zone 1, 132123123123</p> */}
 
               </div>
