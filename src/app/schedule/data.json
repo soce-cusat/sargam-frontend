@@ -1,0 +1,887 @@
+[
+    {
+      "Day": "DAY-1 14/03/2025 Friday",
+      "Stages": [
+        {
+          "Stage": "Stage-1 (seminar complex)",
+          "Events": [
+            {
+              "Event": "Inauguration",
+              "Time": "09:00 AM"
+            },
+            {
+              "Event": "Nadan pattu",
+              "Time": "10:00 AM"
+            },
+            {
+              "Event": "Vanjipattu",
+              "Time": "11:00 AM"
+            },
+            {
+              "Event": "Group song",
+              "Time": "12:00 PM"
+            },
+            {
+              "Event": "Adapt tune",
+              "Time": "01:00 PM"
+            }
+          ]
+        },
+        {
+          "Stage": "Stage-2 (SMS hall)",
+          "Events": [
+            {
+              "Event": "Mono Act (M)",
+              "Time": "09:00 AM"
+            },
+            {
+              "Event": "Mono Act (F)",
+              "Time": "10:00 AM"
+            },
+            {
+              "Event": "Mimicry (M)",
+              "Time": "11:00 AM"
+            },
+            {
+              "Event": "Mimicry (F)",
+              "Time": "12:00 PM"
+            },
+            {
+              "Event": "Kathaprasangam (M)",
+              "Time": "12:00 PM"
+            },
+            {
+              "Event": "Kathaprasangam (F)",
+              "Time": "12:00 PM"
+            },
+            {
+              "Event": "Stand up comedy",
+              "Time": "12:00 PM"
+            }            
+          ]
+        },
+        {
+          "Stage": "Stage-4 (polymer)",
+          "Events": [
+
+          ]
+        },
+        {
+          "Stage": "Stage-5 (Photonics)",
+          "Events": [
+            {
+                "Event": "Malayalam Recitation",
+                "Time": "09:00 AM"
+              },
+              {
+                "Event": "Malayalam Elocution",
+                "Time": "10:00 AM"
+              },
+              {
+                "Event": "Malayalam Debate",
+                "Time": "11:00 AM"
+              },
+              {
+                "Event": "Malayalam aksharaslogam",
+                "Time": "12:00 PM"
+              }
+          ]
+        },
+        {
+          "Stage": "Stage - 6",
+          "Events": [
+            
+            {
+                "Event": "Cartooning",
+                "Time": "09:00 AM"
+              },
+              {
+                "Event": "Collage",
+                "Time": "10:00 AM"
+              }
+          ]
+        },
+        {
+          "Stage": "Stage -7",
+          "Events": [
+            
+            {
+                "Event": "Poster Making",
+                "Time": "09:00 AM"
+              },
+              {
+                "Event": "Caricature",
+                "Time": "10:00 AM"
+              }
+          ]
+        },
+        {
+          "Stage": "Stage - 8 (Triangle Park)",
+          "Events": [
+            
+            {
+                "Event": "Spot Photography",
+                "Time": "09:00 AM"
+              },
+              {
+                "Event": "Face Painting",
+                "Time": "10:00 AM"
+              }
+          ]
+        },
+        {
+          "Stage": "Stage- 9",
+          "Events": [
+            
+            {
+                "Event": "English Short Story Writing",
+                "Time": "09:00 AM"
+              },
+              {
+                "Event": "English Poetry Writing",
+                "Time": "10:00 AM"
+              },
+              {
+                "Event": "English Essay Writing",
+                "Time": "11:00 AM"
+              }
+          ]
+        },
+        {
+          "Stage": "Stage - 10 (amenity)",
+          "Events": [
+            
+            {
+                "Event": "Clay Modeling",
+                "Time": "09:00 AM"
+              }
+          ]
+        },
+         {
+          "Stage": "Stage 11",
+          "Events": [
+            
+            {
+                "Event": "Malayalam Short Story Writing",
+                "Time": "09:00 AM"
+              },
+              {
+                "Event": "Malayalam Poetry Writing",
+                "Time": "10:00 AM"
+              },
+              {
+                "Event": "Malayalam Essay Writing",
+                "Time": "11:00 AM"
+              }
+          ]
+        }
+      ]
+    },
+    {
+      "Day": "DAY-2 15/03/2025 Saturday",
+      "Stages": [
+        {
+          "Stage": "Stage-1 (seminar complex)",
+          "Events": [
+            
+          ]
+        },
+        {
+          "Stage": "Stage-2 (SMS hall)",
+          "Events": [
+            {
+                "Event": "Kuchupudi (M)",
+                "Time": "09:00 AM"
+              },
+              {
+                "Event": "Kuchupudi (F)",
+                "Time": "10:00 AM"
+              },
+              {
+                "Event": "Bharatha Natyam (M)",
+                "Time": "11:00 AM"
+              },
+              {
+                "Event": "Bharata Natyam (F)",
+                "Time": "12:00 PM"
+              },
+              {
+                "Event": "Kathakali(M)",
+                "Time": "01:00 PM"
+              },
+              {
+                "Event": "Kathakali (F)",
+                "Time": "02:00 PM"
+              },
+              {
+                "Event": "Ottamthulal (M)",
+                "Time": "02:00 PM"
+              },
+              {
+                "Event": "Ottamthulal (F)",
+                "Time": "02:00 PM"
+              }
+          ]
+        },
+        {
+          "Stage": "Stage-3 (Mini hall-seminar complex)",
+          "Events": [
+            
+            {
+                "Event": "English Recitation",
+                "Time": "09:00 AM"
+              },
+            {
+                "Event": "English Elocution",
+                "Time": "09:00 AM"
+              },
+              {
+                "Event": "English Debate",
+                "Time": "10:00 AM"
+              }
+          ]
+        },
+        {
+          "Stage": "Stage-4 (polymer)",
+          "Events": [
+            
+            {
+                "Event": "Arabic Recitation",
+                "Time": "09:00 AM"
+              },
+              {
+                "Event": "Arabic Aksharaslogam",
+                "Time": "10:00 AM"
+              },
+              {
+                "Event": "Arabic elocation",
+                "Time": "11:00 AM"
+              }
+
+            
+          ]
+        },
+        {
+          "Stage": "Stage-5 (Photonics)",
+          "Events": [
+            {
+                "Event": "Mohiniyattam",
+                "Time": "09:00 AM"
+              }
+          ]
+        },
+         {
+          "Stage": "Stage - 6",
+          "Events": [
+            
+            {
+                "Event": "Pencil drawing",
+                "Time": "09:00 AM"
+              },
+               {
+                "Event": "Script writing",
+                "Time": "10:00 AM"
+              }
+          ]
+        },
+        {
+          "Stage": "Stage -7",
+          "Events": [
+            
+            {
+                "Event": "Digital Arts",
+                "Time": "09:00 AM"
+              }
+          ]
+        },
+        {
+          "Stage": "Stage - 8 (Triangle Park)",
+          "Events": [
+            
+            {
+                "Event": "On-the-spot painting",
+                "Time": "09:00 AM"
+              },
+              {
+                "Event": "Mehandi",
+                "Time": "10:00 AM"
+              }
+          ]
+        },
+        {
+          "Stage": "Stage- 9",
+          "Events": [
+            
+            {
+                "Event": "Arabic Essay Writing",
+                "Time": "09:00 AM"
+              },
+              {
+                "Event": "Arabic Short Story Writing",
+                "Time": "10:00 AM"
+              },
+              {
+                "Event": "Arabic Poem Writing",
+                "Time": "11:00 AM"
+              }
+          ]
+        },
+        {
+          "Stage": "Stage - 10 (amenity)",
+          "Events": [
+            
+            {
+                "Event": "Rangoli",
+                "Time": "09:00 AM"
+              }
+          ]
+        },
+        {
+          "Stage": "Stage 11",
+          "Events": [
+           {
+              "Event": "",
+              "Time": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Day": "DAY-3 16/03/2025 Sunday",
+      "Stages": [
+        {
+          "Stage": "Stage-1 (seminar complex)",
+          "Events": [
+            {
+              "Event": "Light Music (M)",
+              "Time": "09:00 AM"
+            },
+            {
+              "Event": "Light Music (F)",
+              "Time": "10:00 AM"
+            },
+            {
+              "Event": "Keralanadanam (M)",
+              "Time": "11:00 AM"
+            },
+            {
+              "Event": "Keralanadanam (F)",
+              "Time": "12:00 PM"
+            },
+            {
+              "Event": "Keralanadanam (Group)",
+              "Time": "01:00 PM"
+            },
+            {
+              "Event": "Thiruvathira",
+              "Time": "02:00 PM"
+            },
+            {
+              "Event": "Step in Synchro",
+              "Time": "03:00 PM"
+            },
+            {
+              "Event": "Fashion Show",
+              "Time": "04:00 PM"
+            }
+          ]
+        },
+        {
+          "Stage": "Stage-2 (SMS hall)",
+          "Events": [
+            {
+              "Event": "Folk Dance (M)",
+              "Time": "09:00 AM"
+            },
+            {
+              "Event": "Folk Dance (F)",
+              "Time": "10:00 AM"
+            },
+            {
+              "Event": "Classical Music (M)",
+              "Time": "11:00 AM"
+            },
+            {
+              "Event": "Classical Music (F)",
+              "Time": "12:00 PM"
+            }
+          ]
+        },
+         {
+          "Stage": "Stage-3 (Mini hall-seminar complex)",
+          "Events": [
+            {
+              "Event": "Hindi Elocution",
+              "Time": "09:00 AM"
+            },
+             {
+              "Event": "Hindi Recitation",
+              "Time": "10:00 AM"
+            },
+             {
+              "Event": "Hindi debate",
+              "Time": "11:00 AM"
+            }
+          ]
+        },
+        {
+          "Stage": "Stage-4 (polymer)",
+          "Events": [
+            
+          ]
+        },
+        {
+          "Stage": "Stage-5 (Photonics)",
+          "Events": [
+            
+          ]
+        },
+         {
+          "Stage": "Stage - 6",
+          "Events": [
+            {
+                "Event": "Short Film Review",
+               "Time": "09:00 AM"
+             }
+          ]
+        },
+         {
+          "Stage": "Stage -7",
+          "Events": [
+            {
+                "Event": "Quiz",
+              "Time": "09:00 AM"
+            }
+          ]
+        },
+        {
+          "Stage": "Stage - 8 (Triangle Park)",
+          "Events": [
+          ]
+        },
+        {
+          "Stage": "Stage- 9",
+          "Events": [
+            
+            {
+                "Event": "Hindi Essay Writing",
+              "Time": "09:00 AM"
+            },
+            {
+                "Event": "Hindi Short Story Writing",
+              "Time": "10:00 AM"
+            },
+            {
+                "Event": "Hindi poem writing",
+              "Time": "11:00 AM"
+            },
+             {
+                "Event": "Hindi Essay writing",
+              "Time": "12:00 PM"
+            }
+          ]
+        },
+         {
+          "Stage": "Stage - 10 (amenity)",
+          "Events": [
+
+          ]
+        },
+        {
+          "Stage": "Stage 11",
+          "Events": [
+            {
+                "Event": "Tamil Story Writing",
+              "Time": "09:00 AM"
+            },
+            {
+                "Event": "Tamil Essay Writing",
+              "Time": "10:00 AM"
+            },
+            {
+                "Event": "Tamil Poetry Writing",
+              "Time": "11:00 AM"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Day": "DAY-4 17/03/2025 Monday",
+      "Stages": [
+        {
+          "Stage": "Stage-1 (seminar complex)",
+          "Events": [
+            {
+              "Event": "Duffmuttu",
+              "Time": "09:00 AM"
+            },
+            {
+              "Event": "Vattappatu",
+              "Time": "10:00 AM"
+            },
+            {
+              "Event": "Oppana",
+              "Time": "11:00 AM"
+            },
+             {
+              "Event": "Kolkali",
+              "Time": "12:00 PM"
+            },
+             {
+              "Event": "Margam Kali",
+              "Time": "01:00 PM"
+            },
+             {
+              "Event": "Nostalgia",
+              "Time": "02:00 PM"
+            },
+             {
+              "Event": "Group Dance",
+              "Time": "03:00 PM"
+            }
+          ]
+        },
+        {
+          "Stage": "Stage-2 (SMS hall)",
+          "Events": [
+            
+             {
+              "Event": "Mappilapattu (M)",
+              "Time": "01:00 PM"
+            },
+             {
+              "Event": "Mappilapattu (F)",
+              "Time": "02:00 PM"
+            }
+            
+          ]
+        },
+         {
+          "Stage": "Stage-3 (Mini hall-seminar complex)",
+          "Events": [
+            {
+                "Event": "Veena",
+                "Time": "09:00 AM"
+              },
+              {
+                "Event": "Tabala",
+                "Time": "10:00 AM"
+              },
+              {
+                "Event": "Chenda",
+                "Time": "11:00 AM"
+              },
+               {
+                "Event": "Percussion Eastern",
+                "Time": "12:00 PM"
+              },
+              {
+                "Event": "String Eastern",
+                "Time": "03:00 PM"
+              },
+              {
+                "Event": "Wind Eastern",
+                "Time": "03:00 PM"
+              }
+            
+          ]
+        },
+         {
+          "Stage": "Stage-4 (polymer)",
+          "Events": [
+            {
+                "Event": "Sanskrit Elocation",
+                "Time": "09:00 AM"
+              },
+               {
+                "Event": "Sanskrit Recitation",
+                "Time": "10:00 AM"
+              },
+               {
+                "Event": "Aksharasloga m",
+                "Time": "11:00 AM"
+              }
+          ]
+        },
+         {
+          "Stage": "Stage-5 (Photonics)",
+          "Events": [
+          ]
+        },
+         {
+          "Stage": "Stage - 6",
+          "Events": [
+             {
+              "Event": "Sanskrit Short Story Writing",
+              "Time": "10:00 AM"
+            },
+             {
+              "Event": "Sanskrit Poem Writing",
+              "Time": "11:00 AM"
+            }
+          ]
+        },
+         {
+          "Stage": "Stage -7",
+          "Events": [
+          ]
+        },
+        {
+          "Stage": "Stage - 8 (Triangle Park)",
+          "Events": [
+          ]
+        },
+         {
+          "Stage": "Stage- 9",
+          "Events": [
+          ]
+        },
+         {
+          "Stage": "Stage - 10 (amenity)",
+          "Events": [
+          ]
+        },
+        {
+          "Stage": "Stage 11",
+          "Events": [
+           {
+              "Event": "",
+              "Time": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Day": "DAY-5 18/03/2025 Tuesday",
+      "Stages": [
+        {
+          "Stage": "Stage-1 (seminar complex)",
+          "Events": [
+            {
+                "Event": "Skit",
+                "Time": "09:00 AM"
+              },
+              {
+                "Event": "Mime",
+                "Time": "10:00 AM"
+              },
+              {
+                "Event": "Vrindhavadhya m",
+                "Time": "11:00 AM"
+              },
+               {
+                "Event": "Drama",
+                "Time": "12:00 PM"
+              }
+            
+          ]
+        },
+        {
+          "Stage": "Stage-2 (SMS hall)",
+          "Events": [
+              {
+                "Event": "Wind Western",
+                "Time": "09:00 AM"
+              },
+            {
+                "Event": "String Western",
+                "Time": "09:00 AM"
+              },
+              {
+                "Event": "Guitar",
+                "Time": "09:00 AM"
+              },
+              {
+                "Event": "Electrical Keyboard",
+                "Time": "10:00 AM"
+              },
+              {
+                "Event": "Western vocal solo",
+                "Time": "11:00 AM"
+              },
+               {
+                "Event": "Percussion western",
+                "Time": "12:00 PM"
+              },
+               {
+                "Event": "Western Group Song",
+                "Time": "01:00 PM"
+              }
+          ]
+        },
+         {
+          "Stage": "Stage-3 (Mini hall-seminar complex)",
+          "Events": [
+            {
+              "Event": "Gazal (M)",
+              "Time": "09:00 AM"
+            },
+             {
+              "Event": "Gazal (F)",
+              "Time": "10:00 AM"
+            },
+            {
+                "Event": "Urdu Recitation",
+                "Time": "09:00 AM"
+              },
+               {
+                "Event": "Hindustani (V) (M)",
+                "Time": "10:00 AM"
+              },
+               {
+                "Event": "Hindustani (V) (F)",
+                "Time": "11:00 AM"
+              }
+          ]
+        },
+         {
+          "Stage": "Stage-4 (polymer)",
+          "Events": [
+          ]
+        },
+         {
+          "Stage": "Stage-5 (Photonics)",
+          "Events": [
+            
+          ]
+        },
+         {
+          "Stage": "Stage - 6",
+          "Events": [
+             {
+              "Event": "Urdu Poetry Writing",
+              "Time": "09:00 AM"
+            },
+             {
+              "Event": "Urdu Story Writing",
+              "Time": "10:00 AM"
+            },
+            {
+                "Event": "Urdu Essay Writing",
+                "Time": "09:00 AM"
+              }
+          ]
+        },
+         {
+          "Stage": "Stage -7",
+          "Events": [
+          ]
+        },
+        {
+          "Stage": "Stage - 8 (Triangle Park)",
+          "Events": [
+          ]
+        },
+         {
+          "Stage": "Stage- 9",
+          "Events": [
+          ]
+        },
+         {
+          "Stage": "Stage - 10 (amenity)",
+          "Events": [
+          ]
+        },
+        {
+          "Stage": "Stage 11",
+          "Events": [
+           {
+              "Event": "",
+              "Time": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Day": "DAY-6 19/03/2025 Wednesday",
+      "Stages": [
+        {
+          "Stage": "Stage-1 (seminar complex)",
+          "Events": [
+            
+             {
+              "Event": "Video Choreography",
+              "Time": "01:00 PM"
+            },
+             {
+              "Event": "Ganamela",
+              "Time": "02:00 PM"
+            },
+            {
+              "Event": "Valedictory function",
+              "Time": "03:00 PM"
+            }
+          ]
+        },
+        {
+          "Stage": "Stage-2 (SMS hall)",
+          "Events": [
+            
+              {
+               "Event": "Tamil Elocation",
+               "Time": "09:00 AM"
+             },
+              {
+               "Event": "Tamil Recitation",
+               "Time": "10:00 AM"
+             }
+          ]
+        },
+         {
+          "Stage": "Stage-3 (Mini hall-seminar complex)",
+          "Events": [
+            
+          ]
+        },
+         {
+          "Stage": "Stage-4 (polymer)",
+          "Events": [
+          ]
+        },
+         {
+          "Stage": "Stage-5 (Photonics)",
+          "Events": [
+          ]
+        },
+         {
+          "Stage": "Stage - 6",
+          "Events": [
+          
+          ]
+        },
+         {
+          "Stage": "Stage -7",
+          "Events": [
+          ]
+        },
+        {
+          "Stage": "Stage - 8 (Triangle Park)",
+          "Events": [
+          ]
+        },
+         {
+          "Stage": "Stage- 9",
+          "Events": [
+          ]
+        },
+         {
+          "Stage": "Stage - 10 (amenity)",
+          "Events": [
+          ]
+        },
+        {
+          "Stage": "Stage 11",
+          "Events": [
+           {
+              "Event": "",
+              "Time": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
