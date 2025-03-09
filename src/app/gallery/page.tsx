@@ -7,6 +7,15 @@ const images = Array.from({ length: 26 }, (_, i) => `/gallery/gallery${1 + i}.jp
 
 export default function MasonryGallery() {
   // const [showSecondVideo, setShowSecondVideo] = useState(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+  // const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     // Simulate loading or fetching data
@@ -22,7 +31,12 @@ export default function MasonryGallery() {
     <>
       <Header />
       <section className="p-4 mt-[10vh] overflow-x-hidden">
-      {/* <h1 className="text-center text-6xl font-bold mb-12 text-white">Gallery</h1> */}
+      <div className="h-30 w-full">
+
+</div>
+<h1 className={`font-bold mb-4 text-center text-white ${isMobile ? "text-3xl" : "text-8xl"}`}>
+        Gallery
+      </h1>
 
         <div className="masonry-layout">
           {images.map((src, index) => (

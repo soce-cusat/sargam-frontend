@@ -3,8 +3,8 @@ import { FaDiscord, FaTwitter, FaYoutube, FaMedium, FaInstagram, FaWhatsapp } fr
 const socialLinks = [
   // { href: "https://discord.com", icon: <FaDiscord /> },
   // { href: "https://twitter.com", icon: <FaTwitter /> },
-  { href: "https://instagram.com", icon: <FaInstagram /> },
-  { href: "https://whatsapp.com", icon: <FaWhatsapp /> },
+  { href: "https://www.instagram.com/sargamcusat?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", icon: <FaInstagram /> },
+  { href: "https://whatsapp.com/channel/0029Vb0oRuJKwqSVrKj2zK0S", icon: <FaWhatsapp /> },
 ];
 
 const Footer = () => {
