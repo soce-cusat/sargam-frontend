@@ -6,24 +6,24 @@
           "Stage": "Stage-1 (seminar complex)",
           "Events": [
             {
-              "Event": "Inauguration",
-              "Time": "09:00 AM"
+              "Event": "Duffmuttu",
+              "Time": "08:00 AM"
             },
             {
-              "Event": "Nadan pattu",
-              "Time": "10:00 AM"
-            },
-            {
-              "Event": "Vanjipattu",
-              "Time": "11:00 AM"
+              "Event": "Oppana",
+              "Time": "09:30 AM"
             },
             {
               "Event": "Group song",
-              "Time": "12:00 PM"
+              "Time": "12:30 PM"
             },
             {
-              "Event": "Adapt tune",
-              "Time": "01:00 PM"
+              "Event": "Inaguration",
+              "Time": "04:00 PM"
+            },
+            {
+              "Event": "Vattappatu",
+              "Time": "05:30 PM"
             }
           ]
         },
@@ -31,39 +31,35 @@
           "Stage": "Stage-2 (SMS hall)",
           "Events": [
             {
-              "Event": "Mono Act (M)",
-              "Time": "09:00 AM"
-            },
-            {
-              "Event": "Mono Act (F)",
-              "Time": "10:00 AM"
-            },
-            {
               "Event": "Mimicry (M)",
-              "Time": "11:00 AM"
+              "Time": "08:00 AM"
             },
             {
               "Event": "Mimicry (F)",
-              "Time": "12:00 PM"
+              "Time": "09:30 AM"
             },
             {
               "Event": "Kathaprasangam (M)",
-              "Time": "12:00 PM"
+              "Time": "10:30 AM"
             },
             {
               "Event": "Kathaprasangam (F)",
-              "Time": "12:00 PM"
+              "Time": "2:30 PM"
             },
             {
-              "Event": "Stand up comedy",
-              "Time": "12:00 PM"
+              "Event": "Stand up Comedy",
+              "Time": "07:00 PM"
             }            
           ]
         },
         {
-          "Stage": "Stage-4 (polymer)",
+          "Stage": "Stage-3 (Mini hall-seminar complex)",
           "Events": [
-
+          ]
+        },
+        {
+          "Stage": "Stage-4 (Polymer)",
+          "Events": [
           ]
         },
         {
@@ -71,84 +67,75 @@
           "Events": [
             {
                 "Event": "Malayalam Recitation",
-                "Time": "09:00 AM"
+                "Time": "08:00 AM"
               },
               {
                 "Event": "Malayalam Elocution",
-                "Time": "10:00 AM"
-              },
-              {
-                "Event": "Malayalam Debate",
                 "Time": "11:00 AM"
               },
               {
-                "Event": "Malayalam aksharaslogam",
-                "Time": "12:00 PM"
+                "Event": "Malayalam Debate",
+                "Time": "02:00 AM"
               }
           ]
         },
         {
-          "Stage": "Stage - 6",
-          "Events": [
-            
-            {
-                "Event": "Cartooning",
-                "Time": "09:00 AM"
-              },
-              {
-                "Event": "Collage",
-                "Time": "10:00 AM"
-              }
-          ]
-        },
-        {
-          "Stage": "Stage -7",
+          "Stage": "Stage - 6 (SLS)",
           "Events": [
             
             {
                 "Event": "Poster Making",
-                "Time": "09:00 AM"
+                "Time": "08:00 AM"
               },
               {
-                "Event": "Caricature",
-                "Time": "10:00 AM"
+                "Event": "Cartooning",
+                "Time": "11:00 AM"
+              }
+          ]
+        },
+        {
+          "Stage": "Stage -7 (DOP)",
+          "Events": [
+            
+            {
+                "Event": "Quiz",
+                "Time": "08:00 AM"
+              },
+              {
+                "Event": "Collage",
+                "Time": "02:00 PM"
               }
           ]
         },
         {
           "Stage": "Stage - 8 (Triangle Park)",
           "Events": [
-            
-            {
-                "Event": "Spot Photography",
-                "Time": "09:00 AM"
-              },
               {
                 "Event": "Face Painting",
-                "Time": "10:00 AM"
+                "Time": "08:00 AM"
               }
           ]
         },
         {
-          "Stage": "Stage- 9",
+          "Stage": "Stage- 9 (Applied Chemistry)",
           "Events": [
             
             {
                 "Event": "English Short Story Writing",
-                "Time": "09:00 AM"
+                "Time": "08:00 AM"
               },
               {
                 "Event": "English Poetry Writing",
-                "Time": "10:00 AM"
+                "Time": "11:00 AM"
               },
               {
                 "Event": "English Essay Writing",
-                "Time": "11:00 AM"
+                "Time": "02:00 PM"
               }
           ]
         },
         {
-          "Stage": "Stage - 10 (amenity)",
+          "Stage": "Stage - 10 (Amenity Centre)",
           "Events": [
             
             {
@@ -158,20 +145,20 @@
           ]
         },
          {
-          "Stage": "Stage 11",
+          "Stage": "Stage - 11 (Executive Hall - Seminar Complex)",
           "Events": [
             
             {
                 "Event": "Malayalam Short Story Writing",
-                "Time": "09:00 AM"
+                "Time": "08:00 AM"
               },
               {
                 "Event": "Malayalam Poetry Writing",
-                "Time": "10:00 AM"
+                "Time": "11:00 AM"
               },
               {
                 "Event": "Malayalam Essay Writing",
-                "Time": "11:00 AM"
+                "Time": "02:00 PM"
               }
           ]
         }
@@ -183,79 +170,50 @@
         {
           "Stage": "Stage-1 (seminar complex)",
           "Events": [
-            
           ]
         },
         {
           "Stage": "Stage-2 (SMS hall)",
           "Events": [
+            
             {
-                "Event": "Kuchupudi (M)",
-                "Time": "09:00 AM"
-              },
-              {
-                "Event": "Kuchupudi (F)",
-                "Time": "10:00 AM"
-              },
-              {
-                "Event": "Bharatha Natyam (M)",
-                "Time": "11:00 AM"
-              },
-              {
-                "Event": "Bharata Natyam (F)",
-                "Time": "12:00 PM"
-              },
-              {
-                "Event": "Kathakali(M)",
-                "Time": "01:00 PM"
-              },
-              {
-                "Event": "Kathakali (F)",
-                "Time": "02:00 PM"
-              },
-              {
-                "Event": "Ottamthulal (M)",
-                "Time": "02:00 PM"
-              },
-              {
-                "Event": "Ottamthulal (F)",
-                "Time": "02:00 PM"
-              }
+              "Event" : "Kuchupudi (F)",
+              "Time" : "08:00 AM"
+            },
+            {
+              "Event" : "Mohiniyattam",
+              "Time":"10:30 AM"
+            },
+            {
+              "Event" : "Bharata Natyam (F)",
+              "Time":"02:00 PM"
+            },
+            {
+              "Event" : "Vrindhavadhyam",
+              "Time":"07:00 PM"
+            }
           ]
         },
         {
           "Stage": "Stage-3 (Mini hall-seminar complex)",
           "Events": [
-            
-            {
-                "Event": "English Recitation",
-                "Time": "09:00 AM"
-              },
-            {
-                "Event": "English Elocution",
-                "Time": "09:00 AM"
-              },
-              {
-                "Event": "English Debate",
-                "Time": "10:00 AM"
-              }
           ]
         },
         {
-          "Stage": "Stage-4 (polymer)",
+          "Stage": "Stage-4 (Polymer)",
           "Events": [
             
             {
                 "Event": "Arabic Recitation",
-                "Time": "09:00 AM"
+                "Time": "08:00 AM"
               },
               {
-                "Event": "Arabic Aksharaslogam",
+                "Event": "Arabic Elocution",
                 "Time": "10:00 AM"
               },
               {
-                "Event": "Arabic elocation",
-                "Time": "11:00 AM"
+                "Event": "Arabic Aksharaslogam",
+                "Time": "01:30 PM"
               }
 
             
@@ -264,33 +222,45 @@
         {
           "Stage": "Stage-5 (Photonics)",
           "Events": [
-            {
-                "Event": "Mohiniyattam",
-                "Time": "09:00 AM"
+              {
+                "Event": "English Recitation",
+                "Time": "08:00 AM"
+              },
+              {
+                "Event": "English Elocution",
+                "Time": "10:30 AM"
+              },
+              {
+                "Event": "English Debate",
+                "Time": "02:00 PM"
               }
           ]
         },
          {
-          "Stage": "Stage - 6",
+          "Stage": "Stage - 6 (SLS)",
           "Events": [
             
             {
                 "Event": "Pencil drawing",
-                "Time": "09:00 AM"
+                "Time": "08:00 AM"
               },
                {
                 "Event": "Script writing",
-                "Time": "10:00 AM"
+                "Time": "11:00 AM"
               }
           ]
         },
         {
-          "Stage": "Stage -7",
+          "Stage": "Stage -7 (DOP)",
           "Events": [
             
-            {
-                "Event": "Digital Arts",
-                "Time": "09:00 AM"
+              {
+                "Event": "Painting",
+                "Time": "11:00 AM"
+              },
+              {
+                "Event": "Caricature",
+                "Time": "02:00 PM"
               }
           ]
         },
@@ -299,35 +269,35 @@
           "Events": [
             
             {
-                "Event": "On-the-spot painting",
-                "Time": "09:00 AM"
+                "Event": "Mehandi",
+                "Time": "08:00 AM"
               },
               {
-                "Event": "Mehandi",
-                "Time": "10:00 AM"
+                "Event": "Spot Photography",
+                "Time": "03:30 PM"
               }
           ]
         },
         {
-          "Stage": "Stage- 9",
+          "Stage": "Stage- 9 (Applied Chemistry)",
           "Events": [
             
             {
                 "Event": "Arabic Essay Writing",
-                "Time": "09:00 AM"
+                "Time": "08:00 AM"
               },
               {
                 "Event": "Arabic Short Story Writing",
-                "Time": "10:00 AM"
+                "Time": "11:00 AM"
               },
               {
                 "Event": "Arabic Poem Writing",
-                "Time": "11:00 AM"
+                "Time": "02:00 PM"
               }
           ]
         },
         {
-          "Stage": "Stage - 10 (amenity)",
+          "Stage": "Stage - 10 (Amenity Centre)",
           "Events": [
             
             {
@@ -337,12 +307,8 @@
           ]
         },
         {
-          "Stage": "Stage 11",
+          "Stage": "Stage - 11 (Executive Hall - Seminar Complex)",
           "Events": [
-           {
-              "Event": "",
-              "Time": ""
-            }
           ]
         }
       ]
@@ -354,36 +320,24 @@
           "Stage": "Stage-1 (seminar complex)",
           "Events": [
             {
-              "Event": "Light Music (M)",
-              "Time": "09:00 AM"
+              "Event": "Thiruvathira",
+              "Time": "08:00 AM"
             },
             {
-              "Event": "Light Music (F)",
-              "Time": "10:00 AM"
+              "Event": "Adapt Tune",
+              "Time": "10:30 AM"
             },
             {
-              "Event": "Keralanadanam (M)",
-              "Time": "11:00 AM"
-            },
-            {
-              "Event": "Keralanadanam (F)",
+              "Event": "Group Dance",
               "Time": "12:00 PM"
             },
             {
-              "Event": "Keralanadanam (Group)",
-              "Time": "01:00 PM"
-            },
-            {
-              "Event": "Thiruvathira",
-              "Time": "02:00 PM"
-            },
-            {
               "Event": "Step in Synchro",
-              "Time": "03:00 PM"
+              "Time": "02:30 PM"
             },
             {
-              "Event": "Fashion Show",
-              "Time": "04:00 PM"
+              "Event": "Nostalgia",
+              "Time": "05:00 PM"
             }
           ]
         },
@@ -391,20 +345,20 @@
           "Stage": "Stage-2 (SMS hall)",
           "Events": [
             {
-              "Event": "Folk Dance (M)",
-              "Time": "09:00 AM"
+              "Event": "Light Music (M)",
+              "Time": "08:00 AM"
             },
             {
-              "Event": "Folk Dance (F)",
-              "Time": "10:00 AM"
+              "Event": "Light Music (F)",
+              "Time": "10:30 AM"
             },
             {
               "Event": "Classical Music (M)",
-              "Time": "11:00 AM"
+              "Time": "02:00 PM"
             },
             {
               "Event": "Classical Music (F)",
-              "Time": "12:00 PM"
+              "Time": "04:30 PM"
             }
           ]
         },
@@ -413,11 +367,11 @@
           "Events": [
             {
               "Event": "Hindi Elocution",
-              "Time": "09:00 AM"
+              "Time": "08:00 AM"
             },
              {
               "Event": "Hindi Recitation",
-              "Time": "10:00 AM"
+              "Time": "09:30 AM"
             },
              {
               "Event": "Hindi debate",
@@ -426,7 +380,7 @@
           ]
         },
         {
-          "Stage": "Stage-4 (polymer)",
+          "Stage": "Stage-4 (Polymer)",
           "Events": [
             
           ]
@@ -438,7 +392,7 @@
           ]
         },
          {
-          "Stage": "Stage - 6",
+          "Stage": "Stage - 6 (SLS)",
           "Events": [
             {
                 "Event": "Short Film Review",
@@ -447,12 +401,8 @@
           ]
         },
          {
-          "Stage": "Stage -7",
+          "Stage": "Stage -7 (DOP)",
           "Events": [
-            {
-                "Event": "Quiz",
-              "Time": "09:00 AM"
-            }
           ]
         },
         {
@@ -461,12 +411,12 @@
           ]
         },
         {
-          "Stage": "Stage- 9",
+          "Stage": "Stage- 9 (Applied Chemistry)",
           "Events": [
             
             {
                 "Event": "Hindi Essay Writing",
-              "Time": "09:00 AM"
+                "Time": "08:00 AM"
             },
             {
                 "Event": "Hindi Short Story Writing",
@@ -474,34 +424,30 @@
             },
             {
                 "Event": "Hindi poem writing",
-              "Time": "11:00 AM"
-            },
-             {
-                "Event": "Hindi Essay writing",
               "Time": "12:00 PM"
             }
           ]
         },
          {
-          "Stage": "Stage - 10 (amenity)",
+          "Stage": "Stage - 10 (Amenity Centre)",
           "Events": [
 
           ]
         },
         {
-          "Stage": "Stage 11",
+          "Stage": "Stage - 11 (Executive Hall - Seminar Complex)",
           "Events": [
             {
                 "Event": "Tamil Story Writing",
-              "Time": "09:00 AM"
+                "Time": "08:00 AM"
             },
             {
                 "Event": "Tamil Essay Writing",
-              "Time": "10:00 AM"
+                "Time": "10:00 AM"
             },
             {
                 "Event": "Tamil Poetry Writing",
-              "Time": "11:00 AM"
+                "Time": "12:00 PM"
             }
           ]
         }
@@ -514,32 +460,20 @@
           "Stage": "Stage-1 (seminar complex)",
           "Events": [
             {
-              "Event": "Duffmuttu",
-              "Time": "09:00 AM"
+              "Event": "Nadanpattu",
+              "Time": "08:00 AM"
             },
             {
-              "Event": "Vattappatu",
-              "Time": "10:00 AM"
-            },
-            {
-              "Event": "Oppana",
+              "Event": "Vanchipattu",
               "Time": "11:00 AM"
             },
-             {
+            {
               "Event": "Kolkali",
-              "Time": "12:00 PM"
-            },
-             {
-              "Event": "Margam Kali",
-              "Time": "01:00 PM"
-            },
-             {
-              "Event": "Nostalgia",
               "Time": "02:00 PM"
             },
-             {
-              "Event": "Group Dance",
-              "Time": "03:00 PM"
+            {
+              "Event": "Video Choreography",
+              "Time": "04:00 PM"
             }
           ]
         },
@@ -548,12 +482,20 @@
           "Events": [
             
              {
-              "Event": "Mappilapattu (M)",
-              "Time": "01:00 PM"
+              "Event": "Mono Act (M)",
+              "Time": "08:00 AM"
             },
              {
-              "Event": "Mappilapattu (F)",
-              "Time": "02:00 PM"
+              "Event": "Mono Act (F)",
+              "Time": "09:30 AM"
+            },
+            {
+              "Event" : "Mappilapattu (M)",
+              "Time" : "03:30 PM"
+            },
+            {
+              "Event" : "Mappilapattu (F)",
+              "Time" : "05:30 PM"
             }
             
           ]
@@ -562,69 +504,60 @@
           "Stage": "Stage-3 (Mini hall-seminar complex)",
           "Events": [
             {
-                "Event": "Veena",
-                "Time": "09:00 AM"
-              },
-              {
                 "Event": "Tabala",
-                "Time": "10:00 AM"
+                "Time": "08:00 AM"
               },
               {
                 "Event": "Chenda",
-                "Time": "11:00 AM"
+                "Time": "09:30 AM"
               },
                {
                 "Event": "Percussion Eastern",
-                "Time": "12:00 PM"
-              },
-              {
-                "Event": "String Eastern",
-                "Time": "03:00 PM"
-              },
-              {
-                "Event": "Wind Eastern",
-                "Time": "03:00 PM"
+                "Time": "11:30 AM"
               }
-            
           ]
         },
          {
-          "Stage": "Stage-4 (polymer)",
+          "Stage": "Stage-4 (Polymer)",
           "Events": [
-            {
-                "Event": "Sanskrit Elocation",
-                "Time": "09:00 AM"
-              },
                {
                 "Event": "Sanskrit Recitation",
                 "Time": "10:00 AM"
               },
                {
-                "Event": "Aksharasloga m",
-                "Time": "11:00 AM"
+                "Event": "Sanskrit Aksharaslogam",
+                "Time": "01:30 PM"
+              },
+              {
+                "Event": "Malayalam Aksharaslogam",
+                "Time": "04:00 PM"
               }
           ]
         },
          {
           "Stage": "Stage-5 (Photonics)",
           "Events": [
-          ]
-        },
-         {
-          "Stage": "Stage - 6",
-          "Events": [
-             {
-              "Event": "Sanskrit Short Story Writing",
-              "Time": "10:00 AM"
-            },
-             {
-              "Event": "Sanskrit Poem Writing",
-              "Time": "11:00 AM"
+            {
+              "Event": "Keralanadanam",
+              "Time": "08:00 AM"
             }
           ]
         },
          {
-          "Stage": "Stage -7",
+          "Stage": "Stage - 6 (SLS)",
+          "Events": [
+             {
+              "Event": "Sanskrit Short Story Writing",
+              "Time": "08:00 AM"
+            },
+             {
+              "Event": "Sanskrit Poem Writing",
+              "Time": "10:00 AM"
+            }
+          ]
+        },
+         {
+          "Stage": "Stage -7 (DOP)",
           "Events": [
           ]
         },
@@ -634,22 +567,18 @@
           ]
         },
          {
-          "Stage": "Stage- 9",
+          "Stage": "Stage- 9 (Applied Chemistry)",
           "Events": [
           ]
         },
          {
-          "Stage": "Stage - 10 (amenity)",
+          "Stage": "Stage - 10 (Amenity Centre)",
           "Events": [
           ]
         },
         {
-          "Stage": "Stage 11",
+          "Stage": "Stage - 11 (Executive Hall - Seminar Complex)",
           "Events": [
-           {
-              "Event": "",
-              "Time": ""
-            }
           ]
         }
       ]
@@ -662,19 +591,19 @@
           "Events": [
             {
                 "Event": "Skit",
-                "Time": "09:00 AM"
+                "Time": "08:00 AM"
               },
               {
                 "Event": "Mime",
                 "Time": "10:00 AM"
               },
               {
-                "Event": "Vrindhavadhya m",
-                "Time": "11:00 AM"
+                "Event": "Margamkali",
+                "Time": "01:30 PM"
               },
                {
                 "Event": "Drama",
-                "Time": "12:00 PM"
+                "Time": "03:30 PM"
               }
             
           ]
@@ -683,32 +612,24 @@
           "Stage": "Stage-2 (SMS hall)",
           "Events": [
               {
-                "Event": "Wind Western",
-                "Time": "09:00 AM"
+                "Event": "Folk Dance (M)",
+                "Time": "08:00 AM"
               },
             {
-                "Event": "String Western",
-                "Time": "09:00 AM"
-              },
-              {
-                "Event": "Guitar",
-                "Time": "09:00 AM"
-              },
-              {
-                "Event": "Electrical Keyboard",
+                "Event": "Folk Dance (F)",
                 "Time": "10:00 AM"
               },
               {
-                "Event": "Western vocal solo",
-                "Time": "11:00 AM"
+                "Event": "Western vocal Solo",
+                "Time": "02:00 PM"
               },
-               {
-                "Event": "Percussion western",
-                "Time": "12:00 PM"
+              {
+                "Event": "Percussion Western",
+                "Time": "04:00 PM"
               },
-               {
+              {
                 "Event": "Western Group Song",
-                "Time": "01:00 PM"
+                "Time": "05:30 PM"
               }
           ]
         },
@@ -717,43 +638,50 @@
           "Events": [
             {
               "Event": "Gazal (M)",
-              "Time": "09:00 AM"
+              "Time": "08:00 AM"
             },
              {
               "Event": "Gazal (F)",
-              "Time": "10:00 AM"
+              "Time": "11:00 AM"
             },
             {
                 "Event": "Urdu Recitation",
-                "Time": "09:00 AM"
-              },
-               {
-                "Event": "Hindustani (V) (M)",
-                "Time": "10:00 AM"
+                "Time": "02:00 PM"
               },
                {
                 "Event": "Hindustani (V) (F)",
-                "Time": "11:00 AM"
+                "Time": "04:00 PM"
               }
           ]
         },
          {
-          "Stage": "Stage-4 (polymer)",
+          "Stage": "Stage-4 (Polymer)",
           "Events": [
           ]
         },
          {
           "Stage": "Stage-5 (Photonics)",
           "Events": [
-            
+            {
+              "Event": "String Western",
+              "Time": "08:00 AM"
+            },
+            {
+              "Event":"Guitar",
+              "Time":"10:00 AM"
+            },
+            {
+              "Event": "Electrical Keyboard",
+              "Time":"12:00 PM"
+            }
           ]
         },
          {
-          "Stage": "Stage - 6",
+          "Stage": "Stage - 6 (SLS)",
           "Events": [
              {
               "Event": "Urdu Poetry Writing",
-              "Time": "09:00 AM"
+              "Time": "08:00 AM"
             },
              {
               "Event": "Urdu Story Writing",
@@ -761,12 +689,12 @@
             },
             {
                 "Event": "Urdu Essay Writing",
-                "Time": "09:00 AM"
+                "Time": "12:00 PM"
               }
           ]
         },
          {
-          "Stage": "Stage -7",
+          "Stage": "Stage -7 (DOP)",
           "Events": [
           ]
         },
@@ -776,22 +704,18 @@
           ]
         },
          {
-          "Stage": "Stage- 9",
+          "Stage": "Stage- 9 (Applied Chemistry)",
           "Events": [
           ]
         },
          {
-          "Stage": "Stage - 10 (amenity)",
+          "Stage": "Stage - 10 (Amenity Centre)",
           "Events": [
           ]
         },
         {
-          "Stage": "Stage 11",
+          "Stage": "Stage - 11 (Executive Hall - Seminar Complex)",
           "Events": [
-           {
-              "Event": "",
-              "Time": ""
-            }
           ]
         }
       ]
@@ -804,16 +728,16 @@
           "Events": [
             
              {
-              "Event": "Video Choreography",
-              "Time": "01:00 PM"
+              "Event": "Fashion Show",
+              "Time": "08:00 AM"
             },
              {
               "Event": "Ganamela",
-              "Time": "02:00 PM"
+              "Time": "11:00 AM"
             },
             {
               "Event": "Valedictory function",
-              "Time": "03:00 PM"
+              "Time": "04:00 PM"
             }
           ]
         },
@@ -823,11 +747,11 @@
             
               {
                "Event": "Tamil Elocation",
-               "Time": "09:00 AM"
+               "Time": "08:00 AM"
              },
               {
                "Event": "Tamil Recitation",
-               "Time": "10:00 AM"
+               "Time": "10:30 AM"
              }
           ]
         },
@@ -838,7 +762,7 @@
           ]
         },
          {
-          "Stage": "Stage-4 (polymer)",
+          "Stage": "Stage-4 (Polymer)",
           "Events": [
           ]
         },
@@ -848,13 +772,13 @@
           ]
         },
          {
-          "Stage": "Stage - 6",
+          "Stage": "Stage - 6 (SLS)",
           "Events": [
           
           ]
         },
          {
-          "Stage": "Stage -7",
+          "Stage": "Stage -7 (DOP)",
           "Events": [
           ]
         },
@@ -864,22 +788,18 @@
           ]
         },
          {
-          "Stage": "Stage- 9",
+          "Stage": "Stage- 9 (Applied Chemistry)",
           "Events": [
           ]
         },
          {
-          "Stage": "Stage - 10 (amenity)",
+          "Stage": "Stage - 10 (Amenity Centre)",
           "Events": [
           ]
         },
         {
-          "Stage": "Stage 11",
+          "Stage": "Stage - 11 (Executive Hall - Seminar Complex)",
           "Events": [
-           {
-              "Event": "",
-              "Time": ""
-            }
           ]
         }
       ]
