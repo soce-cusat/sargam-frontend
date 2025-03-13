@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+#components
+src/app/results/
+
 # production
 /build
 

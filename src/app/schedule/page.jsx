@@ -135,7 +135,7 @@ export default function Schedule() {
               onChange={(e) => setSelectedVenue(e.target.value)}
             >
               {venues.map((venue, index) => (
-                <option key={index} value={venue}>
+                <option key={index} value={venue} className="text-white">
                   {venue}
                 </option>
               ))}
@@ -173,7 +173,7 @@ export default function Schedule() {
               .map((time, timeIndex) => (
                 <div
                   key={timeIndex}
-                  className="border border-[#a01330] rounded-lg p-4 sm:p-5 transition-all hover:bg-[#0c0103]"
+                  className="border border-[#a01330] text-white rounded-lg p-4 sm:p-5 transition-all hover:bg-[#0c0103]"
                 >
                   <h3 className="font-bold text-lg mb-3 pb-2 border-b border-[#a01330]/30">
                     {time}
@@ -203,7 +203,7 @@ export default function Schedule() {
             {filteredEvents.map((event, index) => (
               <div
                 key={index}
-                className="border border-[#a01330] rounded-lg p-4 hover:bg-[#1a0309] transition-colors"
+                className="border border-[#a01330] text-white rounded-lg p-4 hover:bg-[#1a0309] transition-colors"
               >
                 <h3 className="font-bold text-lg mb-2">{event.name}</h3>
                 <div className="space-y-1">
