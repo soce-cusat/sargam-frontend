@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/header/index";
 import Footer from "../../components/Footer";
 import rawSchedule from "./data.json";
+import Image from "next/image";
 
 const schedule = rawSchedule.map((day) => {
   const parts = day.Day.split(" ");
@@ -60,7 +61,12 @@ export default function Schedule() {
   const [selectedDay, setSelectedDay] = useState(schedule[0]);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedVenue, setSelectedVenue] = useState("All Venues");
-  const [viewMode, setViewMode] = useState("list"); // 'list' or 'card'
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Use useEffect to fix CSS loading issue
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const filteredEvents = selectedDay.events.filter((event) => {
     const matchesSearch = event.name
@@ -72,173 +78,146 @@ export default function Schedule() {
     return matchesSearch && matchesVenue;
   });
 
-  const groupedByTime = {};
-  filteredEvents.forEach((event) => {
-    if (!groupedByTime[event.time]) {
-      groupedByTime[event.time] = [];
-    }
-    groupedByTime[event.time].push(event);
-  });
+  if (!isMounted) {
+    return null; // Return null on first render to prevent flash of unstyled content
+  }
 
   return (
     <>
-      <Header />
-      <div className="bg-black text-[#a01330] min-h-screen px-4 py-46 sm:px-6 md:px-8 lg:px-12">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-2xl md:text-4xl font-bold text-center mb-6 sm:mb-8">
-            COCHIN UNIVERSITY ARTS FEST – SARGAM 2025
-          </h1>
-
-          <div className="flex overflow-x-auto py-3 no-scrollbar -mx-2 md:mx-66 px-2">
-            <div className="flex gap-2 sm:gap-3 md:gap-4">
-              {schedule.map((dayItem, index) => (
-                <button
-                  key={index}
-                  onClick={() => setSelectedDay(dayItem)}
-                  className={`p-2 sm:p-3 border rounded-md min-w-[110px] text-center flex-shrink-0 transition-colors ${
-                    selectedDay.day === dayItem.day
-                      ? "bg-[#a01330] text-white"
-                      : "border-[#a01330] hover:bg-[#a0133020]"
-                  }`}
-                >
-                  <div className="font-bold">{dayItem.day}</div>
-                  <div>{dayItem.date}</div>
-                  <div>{dayItem.weekday}</div>
-                </button>
-              ))}
-            </div>
-          </div>
-          <div className="absolute top-0 bottom-0 left-0 w-8 bg-gradient-to-r from-black to-transparent pointer-events-none"></div>
-          <div className="absolute top-0 bottom-0 right-0 w-8 bg-gradient-to-l from-black to-transparent pointer-events-none"></div>
-        </div>
-
-        <div className="text-center mb-6 sm:mb-8">
-          <h2 className="text-xl md:text-2xl font-bold">
-            {selectedDay.day} - {selectedDay.date} ({selectedDay.weekday})
-          </h2>
-          <p className="text-lg mt-2">{filteredEvents.length} Events</p>
-        </div>
-
-        <div className="mb-6 sm:mb-8 space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4 lg:flex lg:items-center lg:justify-between">
-          <div className="space-y-4 sm:space-y-4 sm:col-span-2 lg:space-y-0 lg:flex lg:items-center lg:gap-3 lg:flex-grow">
-            <input
-              type="text"
-              placeholder="Search events..."
-              className="p-3 bg-black border border-[#a01330] rounded-md w-full lg:w-1/2 focus:outline-none focus:ring-2 focus:ring-[#a01330]"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+      <Header />  
+      <div className="bg-black text-[#a01330] min-h-screen relative mt-20">
+        {/* Top left mandala image */}
+        <div className="absolute -top-10 -left-20 z-10 overflow-hidden pointer-events-none">
+          <div className="animate-spin-slow w-[70vw] h-[70vw] sm:w-[150px] sm:h-[150px] md:w-[200px] md:h-[200px] lg:w-[500px] lg:h-[500px]">
+            <Image
+              src="/mandala.png"
+              alt="Background"
+              width={500}
+              height={500}
+              layout="responsive"
+              priority
             />
-
-            <select
-              className="p-3 bg-black border border-[#a01330] rounded-md w-full lg:w-1/2 focus:outline-none focus:ring-2 focus:ring-[#a01330]"
-              value={selectedVenue}
-              onChange={(e) => setSelectedVenue(e.target.value)}
-            >
-              {venues.map((venue, index) => (
-                <option key={index} value={venue} className="text-white">
-                  {venue}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div className="flex gap-2 justify-center sm:justify-end">
-            <button
-              onClick={() => setViewMode("list")}
-              className={`px-4 py-3 border border-[#a01330] rounded-md transition-colors ${
-                viewMode === "list"
-                  ? "bg-[#a01330] text-white"
-                  : "hover:bg-[#a0133020]"
-              }`}
-            >
-              List View
-            </button>
-            <button
-              onClick={() => setViewMode("card")}
-              className={`px-4 py-3 border border-[#a01330] rounded-md transition-colors ${
-                viewMode === "card"
-                  ? "bg-[#a01330] text-white"
-                  : "hover:bg-[#a0133020]"
-              }`}
-            >
-              Card View
-            </button>
           </div>
         </div>
+        
+        {/* Bottom right mandala image */}
+        <div className="absolute -bottom-10 -right-10 z-10 overflow-hidden pointer-events-none">
+          <div className="animate-spin-slow w-[70vw] h-[70vw] sm:w-[150px] sm:h-[150px] md:w-[200px] md:h-[200px] lg:w-[500px] lg:h-[500px]">
+            <Image
+              src="/mandala.png"
+              alt="Background"
+              width={500}
+              height={500}
+              layout="responsive"
+              priority
+            />
+          </div>
+        </div>
+        
+        <div className="px-3 py-6 sm:px-4 sm:py-8 md:px-6 md:py-10 lg:px-12 relative z-20">
+          <div className="max-w-7xl mx-auto">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 tracking-tight">
+              COCHIN UNIVERSITY ARTS FEST – SARGAM 2025
+            </h1>
 
-        {viewMode === "list" && (
-          <div className="space-y-5">
-            {Object.keys(groupedByTime)
-              .sort()
-              .map((time, timeIndex) => (
-                <div
-                  key={timeIndex}
-                  className="border border-[#a01330] text-white rounded-lg p-4 sm:p-5 transition-all hover:bg-[#0c0103]"
-                >
-                  <h3 className="font-bold text-lg mb-3 pb-2 border-b border-[#a01330]/30">
-                    {time}
-                  </h3>
-                  <div className="space-y-4">
-                    {groupedByTime[time].map((event, eventIndex) => (
-                      <div
-                        key={eventIndex}
-                        className="border-l-4 border-[#a01330] pl-3 py-2 hover:bg-[#a0133010] transition-colors rounded-r"
+            {/* Day selection - centered and responsive */}
+            <div className="relative mb-4 sm:mb-6">
+              <div className="flex justify-center">
+                <div className="w-full max-w-full overflow-x-auto py-3 no-scrollbar px-2">
+                  <div className="flex gap-2 sm:gap-3 md:gap-4 min-w-min mx-auto justify-center">
+                    {schedule.map((dayItem, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setSelectedDay(dayItem)}
+                        className={`p-2 sm:p-3 border rounded-md min-w-[100px] sm:min-w-[110px] bg-[#a01330] border-[#a01330] text-white text-center flex-shrink-0 transition-all hover:shadow-lg hover:shadow-[#a01330]/40 hover:translate-y-[-3px] ${
+                          selectedDay.day === dayItem.day
+                            ? "bg-[#a01330] text-white ring-2 ring-white/50"
+                            : ""
+                        }`}
                       >
-                        <h4 className="font-bold text-base sm:text-lg">
-                          {event.name}
-                        </h4>
-                        <p className="text-sm sm:text-base mt-1">
-                          Venue: {event.venue}
-                        </p>
-                      </div>
+                        <div className="font-bold text-sm sm:text-base">{dayItem.day}</div>
+                        <div className="text-xs sm:text-sm">{dayItem.date}</div>
+                        <div className="text-xs sm:text-sm">{dayItem.weekday}</div>
+                      </button>
                     ))}
                   </div>
                 </div>
-              ))}
-          </div>
-        )}
-
-        {viewMode === "card" && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredEvents.map((event, index) => (
-              <div
-                key={index}
-                className="border border-[#a01330] text-white rounded-lg p-4 hover:bg-[#1a0309] transition-colors"
-              >
-                <h3 className="font-bold text-lg mb-2">{event.name}</h3>
-                <div className="space-y-1">
-                  <p className="flex items-start">
-                    <span className="font-semibold min-w-16 inline-block">
-                      Time:
-                    </span>
-                    <span>{event.time}</span>
-                  </p>
-                  <p className="flex items-start">
-                    <span className="font-semibold min-w-16 inline-block">
-                      Venue:
-                    </span>
-                    <span>{event.venue}</span>
-                  </p>
-                </div>
               </div>
-            ))}
-          </div>
-        )}
+            </div>
 
-        {filteredEvents.length === 0 && (
-          <div className="text-center py-10 border border-[#a01330]/30 rounded-lg">
-            <p className="text-lg">No events match your search criteria.</p>
-            <button
-              onClick={() => {
-                setSearchTerm("");
-                setSelectedVenue("All Venues");
-              }}
-              className="mt-4 px-4 py-2 border border-[#a01330] rounded-md hover:bg-[#a01330] hover:text-white transition-colors"
-            >
-              Clear Filters
-            </button>
+            <div className="text-center mb-5 sm:mb-6 lg:mb-8">
+              <h2 className="text-lg sm:text-xl md:text-2xl font-bold">
+                {selectedDay.day} - {selectedDay.date} ({selectedDay.weekday})
+              </h2>
+              <p className="text-base sm:text-lg mt-1 sm:mt-2">{filteredEvents.length} Events</p>
+            </div>
+
+            <div className="mb-5 sm:mb-6 lg:mb-8">
+              <div className="space-y-3 sm:space-y-4 sm:grid sm:grid-cols-2 sm:gap-4 lg:flex lg:items-center lg:space-y-0 lg:gap-3">
+                <input
+                  type="text"
+                  placeholder="Search events..."
+                  className="p-2 sm:p-3 bg-black border border-[#a01330] text-white rounded-md w-full lg:w-1/2 focus:outline-none focus:ring-2 focus:ring-[#a01330] placeholder-gray-400"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+
+                <select
+                  className="p-2 sm:p-3 bg-black border border-[#a01330] rounded-md text-white w-full lg:w-1/2 focus:outline-none focus:ring-2 focus:ring-[#a01330]"
+                  value={selectedVenue}
+                  onChange={(e) => setSelectedVenue(e.target.value)}
+                >
+                  {venues.map((venue, index) => (
+                    <option key={index} value={venue}>
+                      {venue}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            {/* Grid View - Responsive */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-10">
+              {filteredEvents.map((event, index) => (
+                <div
+                  key={index}
+                  className="border border-[#a01330] text-white rounded-lg p-3 sm:p-4 bg-[#1a0309] transition-all hover:bg-[#220409]"
+                >
+                  <h3 className="font-bold text-base sm:text-lg mb-2 line-clamp-2">{event.name}</h3>
+                  <div className="space-y-1">
+                    <p className="flex items-start text-sm sm:text-base">
+                      <span className="font-semibold min-w-[60px] sm:min-w-16 inline-block">
+                        Time:
+                      </span>
+                      <span>{event.time}</span>
+                    </p>
+                    <p className="flex items-start text-sm sm:text-base">
+                      <span className="font-semibold min-w-[60px] sm:min-w-16 inline-block">
+                        Venue:
+                      </span>
+                      <span className="break-words">{event.venue}</span>
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {filteredEvents.length === 0 && (
+              <div className="text-center py-8 sm:py-10 border border-[#a01330]/30 rounded-lg mb-8 sm:mb-10">
+                <p className="text-base sm:text-lg text-white">No events match your search criteria.</p>
+                <button
+                  onClick={() => {
+                    setSearchTerm("");
+                    setSelectedVenue("All Venues");
+                  }}
+                  className="mt-3 sm:mt-4 px-3 sm:px-4 py-2 border border-[#a01330] text-white rounded-md hover:bg-[#a01330] hover:text-white transition-all"
+                >
+                  Clear Filters
+                </button>
+              </div>
+            )}
           </div>
-        )}
+        </div>
       </div>
       <Footer />
 
@@ -249,6 +228,17 @@ export default function Schedule() {
         }
         .no-scrollbar::-webkit-scrollbar {
           display: none;
+        }
+        @keyframes spin-slow {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        .animate-spin-slow {
+          animation: spin-slow 20s linear infinite;
         }
       `}</style>
     </>
