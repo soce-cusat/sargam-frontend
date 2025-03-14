@@ -37,19 +37,19 @@ const MainPage = () => {
   );
 };
 
-const isMobile=false
-const data = [
-    { name: "1", value: 0 },
-    { name: "2", value: 0 },
-    { name: "3", value: 0 },
-    { name: "4", value: 0 },
-    { name: "5", value: 0 },
-    { name: "6", value: 0 },
-    { name: "7", value: 0 },
-    { name: "8", value: 0 },
-  ];
+// const isMobile=false
+// const data = [
+//     { name: "1", value: 0 },
+//     { name: "2", value: 0 },
+//     { name: "3", value: 0 },
+//     { name: "4", value: 0 },
+//     { name: "5", value: 0 },
+//     { name: "6", value: 0 },
+//     { name: "7", value: 0 },
+//     { name: "8", value: 0 },
+//   ];
   
-  const colors = ["#8884d8", "#82ca9d", "#ffc658", "#ff7f50", "#00c49f", "#ffb6c1", "#4682b4", "#ff6347"];
+  // const colors = ["#8884d8", "#82ca9d", "#ffc658", "#ff7f50", "#00c49f", "#ffb6c1", "#4682b4", "#ff6347"];
   
 const Leaderboard = () =><div className="w-full flex flex-col items-center justify-center p-4">
 {/* Responsive Leaderboard Heading */}
