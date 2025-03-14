@@ -1,7 +1,6 @@
 "use client";
 import Loading from "@/components/Loading";
 import Image from 'next/image';
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Cell, LabelList } from "recharts";
 import { useEffect, useState } from "react";
 const images = Array.from({ length: 26 }, (_, i) => `/gallery/gallery${1 + i}.jpg`);
 import ResponsiveBarGraph from "@/components/leaderboard/leaderboard";
