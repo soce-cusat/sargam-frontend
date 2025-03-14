@@ -33,6 +33,11 @@ const links = [
     href: "/gallery",
     src: "gallery.jpg"
   },
+  {
+    title: "Results",
+    href: "/app/results",
+    src: "events.png"
+  },
   
 ]
 
