@@ -43,9 +43,12 @@ body {
 }
 
 .masonry-layout {
-  column-count: 4; /* Number of columns */
+  column-count: 6; /* Number of columns */
   column-gap: 16px; /* Gap between columns */
 }
+
+
+
 
 .masonry-item {
   break-inside: avoid; /* Prevents items from breaking inside columns */
@@ -53,13 +56,13 @@ body {
 }
 @media (max-width: 768px) {
   .masonry-layout {
-    column-count: 2; /* 2 columns on smaller screens */
+    column-count: 3; /* 2 columns on smaller screens */
   }
 }
 
 @media (max-width: 480px) {
   .masonry-layout {
-    column-count: 2; /* 1 column on very small screens */
+    column-count: 3; /* 1 column on very small screens */
   }
 }
 @keyframes spin-slow {

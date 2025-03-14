@@ -30,7 +30,7 @@ export default function MasonryGallery() {
   return (
     <>
       <Header />
-      <section className="p-4 mt-[10vh] overflow-x-hidden">
+      <section className="p-4 mt-[10px] overflow-x-hidden">
       <div className="h-30 w-full">
 
 </div>
