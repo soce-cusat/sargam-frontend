@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Cell, LabelList } from "recharts";
 import { useEffect, useState } from "react";
 const images = Array.from({ length: 26 }, (_, i) => `/gallery/gallery${1 + i}.jpg`);
+import ResponsiveBarGraph from "@/components/leaderboard/leaderboard";
+
 // const Loading = () => <div>Loading...</div>; // Replace with actual loading UI
 
 // import { useState } from "react";
@@ -55,38 +57,7 @@ const Leaderboard = () =><div className="w-full flex flex-col items-center justi
 <div className="h-30 w-full">
 
 </div>
-<h1 className={`font-bold mb-4 text-center text-white ${isMobile ? "text-3xl" : "text-8xl"}`}>
-  Leaderboard
-</h1>
-<ResponsiveContainer width="90%" height={isMobile ? 400 : 600}>
-  <BarChart
-    layout={isMobile ? "vertical" : "horizontal"}
-    data={data}
-    margin={{ top: 20, right: 30, left: 20, bottom: 40 }}
-  >
-    <XAxis
-      type={isMobile ? "number" : "category"}
-      dataKey={isMobile ? undefined : "name"}
-      tick={{ fontSize: isMobile ? 12 : 14 }}
-    />
-    <YAxis
-      type={isMobile ? "category" : "number"}
-      dataKey={isMobile ? "name" : undefined}
-      tick={{ fontSize: isMobile ? 12 : 14 }}
-    />
-    <Bar dataKey="value" radius={[5, 5, 0, 0]}>
-      {data.map((entry, index) => (
-        <Cell key={`cell-${index}`} fill={colors[index]} />
-      ))}
-      <LabelList
-        dataKey="value"
-        position={isMobile ? "right" : "top"}
-        fontSize={isMobile ? 12 : 14}
-        fill="#ffffff"
-      />
-    </Bar>
-  </BarChart>
-</ResponsiveContainer>
+<ResponsiveBarGraph/>
 </div>
 
 
