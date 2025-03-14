@@ -11,6 +11,7 @@ export default function BarGraph() {
   const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState<{ name: string; value: number }[]>([]);
+  const [animateKey, setAnimateKey] = useState(0); // For restarting animation on update
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -36,7 +37,11 @@ export default function BarGraph() {
 
   useEffect(() => {
     fetchData();
-    const interval = setInterval(fetchData, 30000); // Update every 30 seconds
+    const interval = setInterval(() => {
+      fetchData();
+      setAnimateKey((prev) => prev + 1); // Restart animation on update
+    }, 30000);
+
     return () => clearInterval(interval);
   }, []);
 
@@ -45,13 +50,14 @@ export default function BarGraph() {
   }
 
   return (
-    <div className="w-full flex flex-col items-center justify-center p-4">
+    <div className="w-full flex flex-col items-center justify-center p-4 my-32">
       <Header />
       <h1 className={`font-bold mb-4 text-center text-white ${isMobile ? "text-3xl" : "text-8xl"}`}>
         Leaderboard
       </h1>
       <ResponsiveContainer width="90%" height={isMobile ? 400 : 500}>
         <BarChart
+          key={animateKey}
           layout={isMobile ? "vertical" : "horizontal"}
           data={data}
           margin={{ top: 20, right: 30, left: 20, bottom: 40 }}
@@ -66,12 +72,24 @@ export default function BarGraph() {
             dataKey={isMobile ? "name" : undefined}
             tick={{ fontSize: isMobile ? 12 : 14, fill: "#fff" }}
           />
-          <Bar dataKey="value" radius={[5, 5, 0, 0]} animationDuration={1500} animationEasing="ease-out">
+          <Bar
+            dataKey="value"
+            radius={isMobile ? [0, 10, 10, 0] : [10, 10, 0, 0]} // Rounded corners
+            animationDuration={2000}
+            animationEasing="ease-in-out"
+          >
             {data.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
             ))}
-            {/* Display zone score on top of bars */}
-            <LabelList dataKey="value" position="top" fontSize={16} fontWeight="bold" fill="#ffffff" />
+            {/* Updated: Use "right" for mobile and "top" for desktop */}
+            <LabelList
+              dataKey="value"
+              position={isMobile ? "right" : "top"}
+              fontSize={isMobile ? 14 : 18}
+              fontWeight="bold"
+              fill="#ffffff"
+              offset={5} // Small offset for clarity
+            />
           </Bar>
         </BarChart>
       </ResponsiveContainer>
