@@ -3,244 +3,220 @@
 import React, { useState, useEffect } from "react";
 import Header from "../../components/header/index";
 import Footer from "../../components/Footer";
-import rawSchedule from "./data.json";
-import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
-const schedule = rawSchedule.map((day) => {
-  const parts = day.Day.split(" ");
-  const dayName = parts[0];
-  const date = parts[1];
-  const weekday = parts[2];
-
-  const events = day.Stages.reduce((acc, stage) => {
-    const rawStage = stage.Stage;
-    let venue = rawStage;
-    const match = rawStage.match(/\((.*?)\)/);
-    if (match) {
-      venue = match[1].trim();
-      venue = venue
-        .split(" ")
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(" ");
-    } else {
-      venue = rawStage.replace(/\s+/g, " ").trim();
-    }
-
-    const stageEvents = stage.Events.map((event) => ({
-      name: event.Event,
-      time: event.Time,
-      venue: venue,
-    }));
-    return acc.concat(stageEvents);
-  }, []);
-
-  return {
-    day: dayName,
-    date,
-    weekday,
-    events,
-  };
-});
-
-const venues = [
-  "All Venues",
-  "Seminar Complex",
-  "SMS Hall",
-  "Mini hall-seminar complex",
-  "Polymer",
-  "Photonics",
-  "Stage-6",
-  "Stage-7",
-  "Triangle Park",
-  "Stage-9",
-  "Amenity",
-  "Stage-11",
-];
-
-export default function Schedule() {
-  const [selectedDay, setSelectedDay] = useState(schedule[0]);
+const Schedule = () => {
+  const [schedule, setSchedule] = useState([]);
+  const [selectedDay, setSelectedDay] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedVenue, setSelectedVenue] = useState("All Venues");
   const [isMounted, setIsMounted] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-  // Use useEffect to fix CSS loading issue
   useEffect(() => {
     setIsMounted(true);
+    fetchSchedule();
   }, []);
 
-  const filteredEvents = selectedDay.events.filter((event) => {
-    const matchesSearch = event.name
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase());
+  const fetchSchedule = async () => {
+    try {
+      const response = await fetch("https://sargam.cusat.ac.in/app/api/schedules");
+      const data = await response.json();
+      const formattedSchedule = Object.values(data).map((day) => {
+        const date = new Date(day.Date);
+        const dayName = date.toLocaleDateString("en-US", { weekday: "long" });
+        const dateString = date.toLocaleDateString("en-US", { day: "numeric", month: "short" });
+
+        const events = Object.values(day.Stages).flatMap((stage) =>
+          Object.values(stage.Events).map((event) => ({
+            name: event.Event,
+            time: event.Time,
+            venue: stage.Stage,
+          }))
+        );
+
+        return {
+          day: dayName,
+          date: dateString,
+          events,
+        };
+      });
+
+      setSchedule(formattedSchedule);
+      setSelectedDay(formattedSchedule[0]);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching schedule:", error);
+      setLoading(false);
+    }
+  };
+
+  const filteredEvents = selectedDay?.events.filter((event) => {
+    const matchesSearch = event.name.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesVenue =
-      selectedVenue === "All Venues" ||
-      event.venue.toLowerCase() === selectedVenue.toLowerCase();
+      selectedVenue === "All Venues" || event.venue.toLowerCase() === selectedVenue.toLowerCase();
     return matchesSearch && matchesVenue;
   });
 
-  if (!isMounted) {
-    return null; // Return null on first render to prevent flash of unstyled content
+  const venues = [
+    "All Venues",
+    ...new Set(schedule.flatMap((day) => day.events || []).map((event) => event.venue)),
+  ].sort();
+
+  if (!isMounted || loading) {
+    return null;
   }
 
   return (
     <>
-      <Header />  
-      <div className="bg-black text-[#a01330] min-h-screen relative mt-20">
-        {/* Top left mandala image */}
-        <div className="absolute -top-10 -left-20 z-10 overflow-hidden pointer-events-none">
-          <div className="animate-spin-slow w-[70vw] h-[70vw] sm:w-[150px] sm:h-[150px] md:w-[200px] md:h-[200px] lg:w-[500px] lg:h-[500px]">
-            <Image
-              src="/mandala.png"
-              alt="Background"
-              width={500}
-              height={500}
-              layout="responsive"
-              priority
-            />
-          </div>
-        </div>
-        
-        {/* Bottom right mandala image */}
-        <div className="absolute -bottom-10 -right-10 z-10 overflow-hidden pointer-events-none">
-          <div className="animate-spin-slow w-[70vw] h-[70vw] sm:w-[150px] sm:h-[150px] md:w-[200px] md:h-[200px] lg:w-[500px] lg:h-[500px]">
-            <Image
-              src="/mandala.png"
-              alt="Background"
-              width={500}
-              height={500}
-              layout="responsive"
-              priority
-            />
-          </div>
-        </div>
-        
-        <div className="px-3 py-6 sm:px-4 sm:py-8 md:px-6 md:py-10 lg:px-12 relative z-20">
-          <div className="max-w-7xl mx-auto">
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 tracking-tight">
-              COCHIN UNIVERSITY ARTS FEST – SARGAM 2025
+      <Header />
+      <div className="bg-black text-gray-200 min-h-screen relative mt-20">
+        <div className="px-4 py-6 sm:px-6 md:px-8 lg:px-12 relative z-20">
+          <div className="max-w-6xl mx-auto">
+            <h1 className="text-3xl font-bold text-center mb-8 text-gray-200">
+              Cochin University Arts Fest – Sargam 2025
             </h1>
 
-            {/* Day selection - centered and responsive */}
-            <div className="relative mb-4 sm:mb-6">
-              <div className="flex justify-center">
-                <div className="w-full max-w-full overflow-x-auto py-3 no-scrollbar px-2">
-                  <div className="flex gap-2 sm:gap-3 md:gap-4 min-w-min mx-auto justify-center">
-                    {schedule.map((dayItem, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setSelectedDay(dayItem)}
-                        className={`p-2 sm:p-3 border rounded-md min-w-[100px] sm:min-w-[110px] bg-[#a01330] border-[#a01330] text-white text-center flex-shrink-0 transition-all hover:shadow-lg hover:shadow-[#a01330]/40 hover:translate-y-[-3px] ${
-                          selectedDay.day === dayItem.day
-                            ? "bg-[#a01330] text-white ring-2 ring-white/50"
-                            : ""
-                        }`}
-                      >
-                        <div className="font-bold text-sm sm:text-base">{dayItem.day}</div>
-                        <div className="text-xs sm:text-sm">{dayItem.date}</div>
-                        <div className="text-xs sm:text-sm">{dayItem.weekday}</div>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="text-center mb-5 sm:mb-6 lg:mb-8">
-              <h2 className="text-lg sm:text-xl md:text-2xl font-bold">
-                {selectedDay.day} - {selectedDay.date} ({selectedDay.weekday})
-              </h2>
-              <p className="text-base sm:text-lg mt-1 sm:mt-2">{filteredEvents.length} Events</p>
-            </div>
-
-            <div className="mb-5 sm:mb-6 lg:mb-8">
-              <div className="space-y-3 sm:space-y-4 sm:grid sm:grid-cols-2 sm:gap-4 lg:flex lg:items-center lg:space-y-0 lg:gap-3">
-                <input
-                  type="text"
-                  placeholder="Search events..."
-                  className="p-2 sm:p-3 bg-black border border-[#a01330] text-white rounded-md w-full lg:w-1/2 focus:outline-none focus:ring-2 focus:ring-[#a01330] placeholder-gray-400"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                />
-
-                <select
-                  className="p-2 sm:p-3 bg-black border border-[#a01330] rounded-md text-white w-full lg:w-1/2 focus:outline-none focus:ring-2 focus:ring-[#a01330]"
-                  value={selectedVenue}
-                  onChange={(e) => setSelectedVenue(e.target.value)}
-                >
-                  {venues.map((venue, index) => (
-                    <option key={index} value={venue}>
-                      {venue}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-
-            {/* Grid View - Responsive */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-10">
-              {filteredEvents.map((event, index) => (
-                <div
+            {/* Day selection */}
+            <div className="mb-8 flex justify-center gap-3 overflow-x-auto no-scrollbar">
+              {schedule.map((dayItem, index) => (
+                <motion.button
                   key={index}
-                  className="border border-[#a01330] text-white rounded-lg p-3 sm:p-4 bg-[#1a0309] transition-all hover:bg-[#220409]"
+                  onClick={() => setSelectedDay(dayItem)}
+                  className={`p-3 rounded-md min-w-[120px] transition-all ${
+                    selectedDay?.day === dayItem.day
+                      ? "bg-red-900/60 text-white font-semibold border border-red-500/40"
+                      : "bg-gray-900 border border-gray-800 text-gray-300 hover:bg-gray-800 hover:border-red-900/40"
+                  }`}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  <h3 className="font-bold text-base sm:text-lg mb-2 line-clamp-2">{event.name}</h3>
-                  <div className="space-y-1">
-                    <p className="flex items-start text-sm sm:text-base">
-                      <span className="font-semibold min-w-[60px] sm:min-w-16 inline-block">
-                        Time:
-                      </span>
-                      <span>{event.time}</span>
-                    </p>
-                    <p className="flex items-start text-sm sm:text-base">
-                      <span className="font-semibold min-w-[60px] sm:min-w-16 inline-block">
-                        Venue:
-                      </span>
-                      <span className="break-words">{event.venue}</span>
-                    </p>
-                  </div>
-                </div>
+                  <div className="font-bold text-base">{dayItem.day}</div>
+                  <div className="text-sm opacity-80">{dayItem.date}</div>
+                </motion.button>
               ))}
             </div>
 
-            {filteredEvents.length === 0 && (
-              <div className="text-center py-8 sm:py-10 border border-[#a01330]/30 rounded-lg mb-8 sm:mb-10">
-                <p className="text-base sm:text-lg text-white">No events match your search criteria.</p>
+            {/* Search & Filter */}
+            <div className="mb-8 flex flex-col sm:flex-row gap-4">
+              <motion.div className="relative w-full">
+                <motion.input
+                  type="text"
+                  placeholder="Search events..."
+                  className="p-3 pl-10 bg-gray-900 border border-gray-800 text-gray-200 rounded-md w-full focus:outline-none focus:border-red-900/50"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 absolute left-3 top-3.5 text-gray-200"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+              </motion.div>
+              <motion.select
+                className="p-3 bg-gray-900 border border-gray-800 rounded-md text-gray-200 w-full sm:max-w-xs focus:outline-none focus:border-red-900/50"
+                value={selectedVenue}
+                onChange={(e) => setSelectedVenue(e.target.value)}
+              >
+                {venues.map((venue, index) => (
+                  <option key={index} value={venue}>
+                    {venue}
+                  </option>
+                ))}
+              </motion.select>
+            </div>
+
+            {/* Events Grid */}
+            <AnimatePresence>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredEvents?.map((event, index) => (
+                  <motion.div
+                    key={index}
+                    className="bg-gray-900 border-l-2 border-l-red-800/40 border-t border-r border-b border-gray-800 text-gray-200 rounded-lg p-5"
+                    whileHover={{ y: -2, backgroundColor: "rgb(23, 23, 23)" }}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                  >
+                    <h3 className="font-bold text-lg mb-3 text-gray-200">{event.name}</h3>
+                    <div className="flex items-center mb-2 text-gray-400">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 mr-2 text-red-400/60"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                      <p className="text-sm">{event.time}</p>
+                    </div>
+                    <div className="flex items-center text-gray-400">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 mr-2 text-red-400/60"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                      </svg>
+                      <p className="text-sm">{event.venue}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </AnimatePresence>
+
+            {filteredEvents?.length === 0 && (
+              <motion.div
+                className="text-center py-12 bg-gray-900 border border-gray-800 rounded-lg mt-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+              >
+                <p className="text-lg text-gray-300 mb-4">No events found matching your criteria.</p>
                 <button
                   onClick={() => {
                     setSearchTerm("");
                     setSelectedVenue("All Venues");
                   }}
-                  className="mt-3 sm:mt-4 px-3 sm:px-4 py-2 border border-[#a01330] text-white rounded-md hover:bg-[#a01330] hover:text-white transition-all"
+                  className="px-6 py-2 bg-red-900/60 text-white rounded-md hover:bg-red-800/70 transition-colors focus:outline-none"
                 >
                   Clear Filters
                 </button>
-              </div>
+              </motion.div>
             )}
           </div>
         </div>
       </div>
       <Footer />
-
-      <style jsx global>{`
-        .no-scrollbar {
-          -ms-overflow-style: none; /* IE and Edge */
-          scrollbar-width: none; /* Firefox */
-        }
-        .no-scrollbar::-webkit-scrollbar {
-          display: none;
-        }
-        @keyframes spin-slow {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-        .animate-spin-slow {
-          animation: spin-slow 20s linear infinite;
-        }
-      `}</style>
     </>
   );
-}
+};
+
+export default Schedule;
