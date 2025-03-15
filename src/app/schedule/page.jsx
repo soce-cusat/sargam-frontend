@@ -18,19 +18,60 @@ const Schedule = () => {
     fetchSchedule();
   }, []);
 
+  const convertToIST = (timeString) => {
+    let hours, minutes, period;
+    
+    if (/^\d{1,2}:\d{2}\s?(?:AM|PM)$/i.test(timeString)) {
+      const timeParts = timeString.match(/^(\d{1,2}):(\d{2})\s?(AM|PM)$/i);
+      hours = parseInt(timeParts[1], 10);
+      minutes = parseInt(timeParts[2], 10);
+      period = timeParts[3].toUpperCase();
+      
+      if (period === "PM" && hours < 12) hours += 12;
+      if (period === "AM" && hours === 12) hours = 0;
+    }
+    else if (/^\d{1,2}:\d{2}$/.test(timeString)) {
+      const timeParts = timeString.split(":");
+      hours = parseInt(timeParts[0], 10);
+      minutes = parseInt(timeParts[1], 10);
+    }
+    else {
+      return timeString;
+    }
+    
+    hours = hours + 5;
+    minutes = minutes + 30;
+    
+    if (minutes >= 60) {
+      hours += 1;
+      minutes -= 60;
+    }
+    if (hours >= 24) {
+      hours -= 24;
+    }
+    
+    let newPeriod = hours >= 12 ? "PM" : "AM";
+    let displayHours = hours % 12;
+    if (displayHours === 0) displayHours = 12;
+    
+    const formattedMinutes = minutes.toString().padStart(2, '0');
+    return `${displayHours}:${formattedMinutes} ${newPeriod}`;
+  };
+
   const fetchSchedule = async () => {
     try {
       const response = await fetch("https://sargam.cusat.ac.in/app/api/schedules");
       const data = await response.json();
+      
       const formattedSchedule = Object.values(data).map((day) => {
-        const date = new Date(day.Date);
-        const dayName = date.toLocaleDateString("en-US", { weekday: "long" });
-        const dateString = date.toLocaleDateString("en-US", { day: "numeric", month: "short" });
-
+        const originalDate = new Date(day.Date);        
+        const istDate = new Date(originalDate.getTime() + (5 * 60 + 30) * 60 * 1000);        
+        const dayName = istDate.toLocaleDateString("en-US", { weekday: "long" });
+        const dateString = istDate.toLocaleDateString("en-US", { day: "numeric", month: "short" });
         const events = Object.values(day.Stages).flatMap((stage) =>
           Object.values(stage.Events).map((event) => ({
             name: event.Event,
-            time: event.Time,
+            time: convertToIST(event.Time),
             venue: stage.Stage,
           }))
         );
@@ -74,7 +115,7 @@ const Schedule = () => {
         <div className="px-4 py-6 sm:px-6 md:px-8 lg:px-12 relative z-20">
           <div className="max-w-6xl mx-auto">
             <h1 className="text-3xl font-bold text-center mb-8 text-gray-200">
-              Cochin University Arts Fest – Sargam 2025
+              Cochin University Arts Fest - Sargam 2025
             </h1>
 
             {/* Day selection */}
@@ -88,8 +129,8 @@ const Schedule = () => {
                       ? "bg-red-900/60 text-white font-semibold border border-red-500/40"
                       : "bg-gray-900 border border-gray-800 text-gray-300 hover:bg-gray-800 hover:border-red-900/40"
                   }`}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  whileHover={{ scale: 1 }}
+                  whileTap={{ scale: 1 }}
                 >
                   <div className="font-bold text-base">{dayItem.day}</div>
                   <div className="text-sm opacity-80">{dayItem.date}</div>
