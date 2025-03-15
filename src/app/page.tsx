@@ -63,7 +63,14 @@ function App() {
 {/* <FloatingImages/>  */}
 {/* 
       <h1>LeaderBoard</h1> */}
-      <ResponsiveBarGraph />
+<br />
+<br /><br />
+<br />
+
+      <ResponsiveBarGraph/>
+      <br />
+<br /><br />
+<br />
     {/* </div> */}
     <div style={{ padding: "20px" }}>  <Contact /></div>
       {/* <Intro/>*/}
